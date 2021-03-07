@@ -23,7 +23,7 @@ Status für **BFI**: nicht fertig
   -**'B'**:   Wechselt in den Kameramodus, um zu spielen
   
 ### Zoom
-  -**'-'**:   Vergrößert das Bild 
+  -**'-'**:   Vergrößert das Bild  
   -**'+'**:   Verkleinder das Bild
   
 ### Rotation
