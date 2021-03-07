@@ -19,7 +19,7 @@ public class KameraZoom : MonoBehaviour
     void Update()
     {
        
-        if (Input.GetKeyDown(KeyCode.KeypadMinus)) {
+        if (Input.GetKeyDown(KeyCode.KeypadMinus)) {//Zoom wird auf positiv / negativ oder null gesetzt
             zoom = 1;
         } else if (Input.GetKeyDown(KeyCode.KeypadPlus)) {
             zoom = -1;
