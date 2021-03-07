@@ -13,3 +13,19 @@ Status für **BFI**: nicht fertig
 **Blender-Figuren-Implementation/BFI** (*closed alpha*) ist selbstverständlich. Hier werden die Blenderfiguren reinimplentiert. Wenn sie einwandfrei funktionieren, wird dies zur **Changes**branch kommen.
 
 **Changes** ist die *closed alpha* version für das Schachspiel. Basiert auf der **Main**branch und, wenn es einwandfrei funktioniert, wird diese Branch in **Main**branch implementiert.
+
+***
+***
+
+## **Tastaturbelegung:**
+### Kameraperspektive
+  -**'V'**:   Wechselt in den Kameramodus, in dem man sich umschauen kann
+  -**'B'**:   Wechselt in den Kameramodus, um zu spielen
+  
+### Zoom
+  -**'-'**:   Vergrößert das Bild 
+  -**'+'**:   Verkleinder das Bild
+  
+### Rotation
+  -Pfeiltasten und Mausrad
+  
