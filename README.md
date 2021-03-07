@@ -19,7 +19,7 @@ Status für **BFI**: nicht fertig
 
 ## **Tastaturbelegung:**
 ### Kameraperspektive
-  -**'V'**:   Wechselt in den Kameramodus, in dem man sich umschauen kann
+  -**'V'**:   Wechselt in den Kameramodus, in dem man sich umschauen kann 
   -**'B'**:   Wechselt in den Kameramodus, um zu spielen
   
 ### Zoom
