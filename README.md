@@ -1,6 +1,6 @@
 # Schach
 
-Unity Version: //bitte hier einfügen
+Unity Version: neueste LTS: 2019.4.21f1
 
 Status für **Main**: *closed alpha*, nicht fertig
 
