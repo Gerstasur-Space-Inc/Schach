@@ -14,6 +14,8 @@ public class Kamera : MonoBehaviour
     public float YRotateSpeed;
     public float ZRotateSpeed;
 
+
+    public int zoom;
     private Vector3 mousePos;
    
 
@@ -28,16 +30,22 @@ public class Kamera : MonoBehaviour
         RotateX = Input.GetAxis("Horizontal");
         RotateY = Input.GetAxis("Vertical");
         RotateZ = Input.mouseScrollDelta.y;
+       
+
+       
             rotateCam();//kamera entsprechend drehen
        
 
        
        
     }
+   
     void rotateCam() {
 
         transform.Rotate(Vector3.up, RotateX * Time.deltaTime * XRotateSpeed * XRotateSpeed);//quadratisch: bessere Nutzerinteraktion
         transform.Rotate(Vector3.right, RotateY * Time.deltaTime * YRotateSpeed * YRotateSpeed);
         transform.Rotate(Vector3.forward, RotateZ * Time.deltaTime * ZRotateSpeed * ZRotateSpeed);
+
+
     }
 }
