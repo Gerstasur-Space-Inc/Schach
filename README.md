@@ -14,18 +14,5 @@ Status für **BFI**: nicht fertig
 
 **Changes** ist die *closed alpha* version für das Schachspiel. Basiert auf der **Main**branch und, wenn es einwandfrei funktioniert, wird diese Branch in **Main**branch implementiert.
 
-***
-***
 
-## **Tastaturbelegung:**
-### Kameraperspektive
-  -**'V'**:   Wechselt in den Kameramodus, in dem man sich umschauen kann \n
-  -**'B'**:   Wechselt in den Kameramodus, um zu spielen
-  
-### Zoom
-  -**' - '**:   Vergrößert das Bild
-  -**' + '**:   Verkleinder das Bild
-  
-### Rotation
-  -Pfeiltasten und Mausrad
   
