@@ -14,5 +14,8 @@ Status für **BFI**: nicht fertig
 
 **Changes** ist die *closed alpha* version für das Schachspiel. Basiert auf der **Main**branch und, wenn es einwandfrei funktioniert, wird diese Branch in **Main**branch implementiert.
 
+Die neuesten Version kann hier gespielt werden:
+https://play.unity.com/mg/other/schach-pre-release
+
 
   
