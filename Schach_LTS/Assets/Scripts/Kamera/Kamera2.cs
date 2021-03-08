@@ -25,21 +25,21 @@ public class Kamera2 : MonoBehaviour
 
     void rotateCam()
     {
-        if (Input.GetMouseButton(2) && Input.GetAxis("Mouse X") < 0)
+        if (Input.GetMouseButtonDown(2) && Input.GetAxis("Mouse X") < 0)
         {
-            transform.Rotate(Vector3.left, RotateX * Time.deltaTime * XRotateSpeed * XRotateSpeed);
+            transform.Rotate(Vector3.left * Time.deltaTime * XRotateSpeed * XRotateSpeed);
         }
-        else if (Input.GetMouseButton(2) && Input.GetAxis("Mouse X") > 0)
+        else if (Input.GetMouseButtonDown(2) && Input.GetAxis("Mouse X") > 0)
         {
-            transform.Rotate(Vector3.right, RotateY * Time.deltaTime * YRotateSpeed * YRotateSpeed);
+            transform.Rotate(Vector3.right * Time.deltaTime * YRotateSpeed * YRotateSpeed);
         }
-        else if (Input.GetMouseButton(2) && Input.GetAxis("Mouse Y") < 0)
+        else if (Input.GetMouseButtonDown(2) && Input.GetAxis("Mouse Y") < 0)
         {
-            transform.Rotate(Vector3.down, RotateX * Time.deltaTime * XRotateSpeed * XRotateSpeed);
+            transform.Rotate(Vector3.down * Time.deltaTime * XRotateSpeed * XRotateSpeed);
         }
-        else if (Input.GetMouseButton(2) && Input.GetAxis("Mouse Y") > 0)
+        else if (Input.GetMouseButtonDown(2) && Input.GetAxis("Mouse Y") > 0)
         {
-            transform.Rotate(Vector3.up, RotateX * Time.deltaTime * XRotateSpeed * XRotateSpeed);
+            transform.Rotate(Vector3.up * Time.deltaTime * YRotateSpeed * XRotateSpeed);
         }
 
     }
