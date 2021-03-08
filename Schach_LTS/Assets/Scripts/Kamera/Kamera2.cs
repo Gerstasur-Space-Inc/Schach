@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class Kamera2 : MonoBehaviour
 {
-
-    private float RotateX = 1f;
-    private float RotateY = 1f;
-
     public float XRotateSpeed;
     public float YRotateSpeed;
-
 
     void Start()
     {
