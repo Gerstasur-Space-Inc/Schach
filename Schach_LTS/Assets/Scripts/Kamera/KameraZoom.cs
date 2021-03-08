@@ -8,7 +8,7 @@ public class KameraZoom : MonoBehaviour
 
 
     public int zoom;
-    public float zoompeed;
+    public float zoomspeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +34,6 @@ public class KameraZoom : MonoBehaviour
     }
     void zoomCam() {
 
-        transform.Translate(Vector3.forward * Time.deltaTime * zoom * zoompeed);
+        transform.Translate(Vector3.forward * Time.deltaTime * zoom * zoomspeed);
     }
 }
