@@ -37,7 +37,7 @@ public class Kamera2 : MonoBehaviour
         {
             transform.Rotate(Vector3.down, RotateX * Time.deltaTime * XRotateSpeed * XRotateSpeed);
         }
-        else if (Input.GetMouseButton(2) && Input.GetAxis("Mouse X") > 0)
+        else if (Input.GetMouseButton(2) && Input.GetAxis("Mouse Y") > 0)
         {
             transform.Rotate(Vector3.up, RotateX * Time.deltaTime * XRotateSpeed * XRotateSpeed);
         }
