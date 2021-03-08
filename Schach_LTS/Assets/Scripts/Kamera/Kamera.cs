@@ -7,8 +7,8 @@ public class Kamera : MonoBehaviour
     // Start is called before the first frame update
 
     private float RotateX = 5.0f;
-    private float RotateY=5.0f;
-    private float RotateZ= 5.0f;
+    private float RotateY = 5.0f;
+    private float RotateZ = 5.0f;
 
     public float XRotateSpeed;
     public float YRotateSpeed;
@@ -17,7 +17,7 @@ public class Kamera : MonoBehaviour
 
     public int zoom;
     private Vector3 mousePos;
-   
+
 
     void Start()
     {
@@ -30,17 +30,18 @@ public class Kamera : MonoBehaviour
         RotateX = Input.GetAxis("Horizontal");
         RotateY = Input.GetAxis("Vertical");
         RotateZ = Input.mouseScrollDelta.y;
-       
 
-       
-            rotateCam();//kamera entsprechend drehen
-       
 
-       
-       
+
+        rotateCam();//kamera entsprechend drehen
+
+
+
+
     }
-   
-    void rotateCam() {
+
+    void rotateCam()
+    {
 
         transform.Rotate(Vector3.up, RotateX * Time.deltaTime * XRotateSpeed * XRotateSpeed);//quadratisch: bessere Nutzerinteraktion
         transform.Rotate(Vector3.right, RotateY * Time.deltaTime * YRotateSpeed * YRotateSpeed);
