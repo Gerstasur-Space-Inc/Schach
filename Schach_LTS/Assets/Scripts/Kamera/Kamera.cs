@@ -27,7 +27,7 @@ public class Kamera : MonoBehaviour
     {
         RotateX = Input.GetAxis("Horizontal");
         RotateY = Input.GetAxis("Vertical");
-        RotateZ = Input.mouseScrollDelta.y;
+        // RotateZ = Input.mouseScrollDelta.y;
              
         rotateCam();//kamera entsprechend drehen       
     }
@@ -36,7 +36,7 @@ public class Kamera : MonoBehaviour
 
         transform.Rotate(Vector3.up, RotateX * Time.deltaTime * XRotateSpeed * XRotateSpeed); //quadratisch: bessere Nutzerinteraktion
         transform.Rotate(Vector3.right, RotateY * Time.deltaTime * YRotateSpeed * YRotateSpeed);
-        transform.Rotate(Vector3.forward, RotateZ * Time.deltaTime * ZRotateSpeed * ZRotateSpeed);
+        // transform.Rotate(Vector3.forward, RotateZ * Time.deltaTime * ZRotateSpeed * ZRotateSpeed);
 
     }
 }

@@ -498,8 +498,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f03898ac328f4a247bb30c656e5e24f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playCam: {fileID: 0}
-  viewCam: {fileID: 0}
+  playCam: {fileID: 963194227}
+  viewCam: {fileID: 2119481239}
 --- !u!114 &1068835984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,7 +525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   freeSquareMaterial: {fileID: 2100000, guid: 42664d6d7f876ca44bd500b0127721d8, type: 2}
-  enemySquareMaterial: {fileID: 0}
+  enemySquareMaterial: {fileID: 2100000, guid: fb024f89e29f27d4f962be940587aeac, type: 2}
   selectorPrefab: {fileID: 1625892269204815410, guid: 3186628bc4da7964aa5f8112114a0566,
     type: 3}
 --- !u!4 &1073381006 stripped
@@ -686,7 +686,7 @@ MonoBehaviour:
   XRotateSpeed: 10
   YRotateSpeed: 10
   ZRotateSpeed: 25
-  zoom: 0
+  zoom: 10
 --- !u!114 &1596282834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -930,8 +930,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eff3e45a82ab99941adbfd9692cfb1c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoom: 0
-  zoomspeed: 0
 --- !u!1 &1089266829029131
 GameObject:
   m_ObjectHideFlags: 0

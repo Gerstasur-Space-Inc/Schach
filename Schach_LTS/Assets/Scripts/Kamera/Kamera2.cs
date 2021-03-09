@@ -27,14 +27,9 @@ public class Kamera2 : MonoBehaviour
 
     void rotateCam()
     {
-        if (Input.GetMouseButton(2) && Input.GetAxis("Mouse X") < 0)
+        if ((Input.GetMouseButton(2) || Input.GetKey(KeyCode.LeftShift)) && Input.GetAxis("Mouse X") != 0)
         {
-            transform.Rotate(Vector3.up * Time.deltaTime * RotateSpeed);
-           
-        }
-        else if (Input.GetMouseButton(2) && Input.GetAxis("Mouse X") > 0)
-        {
-            transform.Rotate(Vector3.up * Time.deltaTime * RotateSpeed);         
+            transform.Rotate(Vector3.up * Time.deltaTime * RotateSpeed * -1);
         }
     }
 
