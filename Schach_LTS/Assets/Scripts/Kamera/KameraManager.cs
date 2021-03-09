@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class KameraManager : MonoBehaviour {
-    // Start is called before the first frame update
    
 
     public Camera playCam;//Main Camera
@@ -16,8 +15,7 @@ public class KameraManager : MonoBehaviour {
 
     }
 
-    // Update is called once per frame
-<<<<<<< HEAD
+
     void Update() {
         if (Input.GetKeyDown(KeyCode.V) && !isviewCam) {
             switchoViewCam();

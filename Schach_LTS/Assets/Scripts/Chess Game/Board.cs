@@ -171,10 +171,9 @@ public class Board : MonoBehaviour
         chessController.CreatePieceAndInitialize(piece.occupiedSquare, piece.team, typeof(Queen));
     }
 
-    internal void OnGameRestarted()//Wenn das Spiel neu gestartet
-=======
 
     internal void OnGameRestarted()
+
     {
         selectedPiece = null;
         CreateGrid();
