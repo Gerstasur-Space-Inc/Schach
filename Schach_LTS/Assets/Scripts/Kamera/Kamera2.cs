@@ -22,23 +22,28 @@ public class Kamera2 : MonoBehaviour
         if (Input.GetMouseButton(2) && Input.GetAxis("Mouse X") < 0)
         {
             transform.Rotate(Vector3.up * Time.deltaTime * RotateSpeed * -1);
-            // Debug.Log("Es funktioniert wahrscheinlich immer noch nicht");           
+           
         }
         else if (Input.GetMouseButton(2) && Input.GetAxis("Mouse X") > 0)
         {
             transform.Rotate(Vector3.up * Time.deltaTime * RotateSpeed);
-            // Debug.Log("Es funktioniert wahrscheinlich immer noch nicht");
+         
         }
-        else if (Input.GetMouseButton(2) && Input.GetAxis("Mouse Y") < 0)
+       /* else if (Input.GetMouseButton(2) && Input.GetAxis("Mouse Y") < 0)
         {
             transform.Rotate(Vector3.left * Time.deltaTime * RotateSpeed * -1);
-            // Debug.Log("Es funktioniert wahrscheinlich immer noch nicht");
+           
         }
         else if (Input.GetMouseButton(2) && Input.GetAxis("Mouse Y") > 0)   
         {
             transform.Rotate(Vector3.left * Time.deltaTime * RotateSpeed);
-            // Debug.Log("Es funktioniert wahrscheinlich immer noch nicht");
-        }
+           
+        }*/
 
+    }
+
+  public  float GetRotateSpeed()
+    {
+        return RotateSpeed;
     }
 }
