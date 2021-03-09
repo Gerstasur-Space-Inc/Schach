@@ -1,13 +1,13 @@
 ﻿
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(PiecesCreator))]
-public class ChessGameController : MonoBehaviour {
-    private enum GameState {
+public class ChessGameController : MonoBehaviour
+{
+    private enum GameState
+    {
         Init, Play, Finished
     }
 
@@ -22,45 +22,54 @@ public class ChessGameController : MonoBehaviour {
 
     private GameState state;
 
-    private void Awake() {
+    private void Awake()
+    {
         SetDependencies();
         CreatePlayers();
     }
 
-    private void SetDependencies() {
+    private void SetDependencies()
+    {
         pieceCreator = GetComponent<PiecesCreator>();
     }
 
-    private void CreatePlayers() {
+    private void CreatePlayers()
+    {
         whitePlayer = new ChessPlayer(TeamColor.White, board);
         blackPlayer = new ChessPlayer(TeamColor.Black, board);
     }
 
-    private void Start() {
+    private void Start()
+    {
         StartNewGame();
     }
 
-    private void StartNewGame() {
+    private void StartNewGame()
+    {
         SetGameState(GameState.Init);
-       // UIManager.HideUI();
+        // UIManager.HideUI();
         board.SetDependencies(this);
         CreatePiecesFromLayout(startingBoardLayout);
         activePlayer = whitePlayer;
         GenerateAllPossiblePlayerMoves(activePlayer);
         SetGameState(GameState.Play);
     }
-    private void SetGameState(GameState state) {
+    private void SetGameState(GameState state)
+    {
         this.state = state;
     }
 
-    internal bool IsGameInProgress() {
+    internal bool IsGameInProgress()
+    {
         return state == GameState.Play;
     }
 
 
 
-    private void CreatePiecesFromLayout(BoardLayout layout) {
-        for (int i = 0; i < layout.GetPiecesCount(); i++) {
+    private void CreatePiecesFromLayout(BoardLayout layout)
+    {
+        for (int i = 0; i < layout.GetPiecesCount(); i++)
+        {
             Vector2Int squareCoords = layout.GetSquareCoordsAtIndex(i);
             TeamColor team = layout.GetSquareTeamColorAtIndex(i);
             string typeName = layout.GetSquarePieceNameAtIndex(i);
@@ -72,7 +81,8 @@ public class ChessGameController : MonoBehaviour {
 
 
 
-    public void CreatePieceAndInitialize(Vector2Int squareCoords, TeamColor team, Type type) {
+    public void CreatePieceAndInitialize(Vector2Int squareCoords, TeamColor team, Type type)
+    {
         Piece newPiece = pieceCreator.CreatePiece(type).GetComponent<Piece>();
         newPiece.SetData(squareCoords, team, board);
 
@@ -85,33 +95,42 @@ public class ChessGameController : MonoBehaviour {
         currentPlayer.AddPiece(newPiece);
     }
 
-    private void GenerateAllPossiblePlayerMoves(ChessPlayer player) {
+    private void GenerateAllPossiblePlayerMoves(ChessPlayer player)
+    {
         player.GenerateAllPossibleMoves();
     }
 
-    public bool IsTeamTurnActive(TeamColor team) {
+    public bool IsTeamTurnActive(TeamColor team)
+    {
         return activePlayer.team == team;
     }
 
-    public void EndTurn() {
+    public void EndTurn()
+    {
         GenerateAllPossiblePlayerMoves(activePlayer);
         GenerateAllPossiblePlayerMoves(GetOpponentToPlayer(activePlayer));
-        if (CheckIfGameIsFinished()) {
+        if (CheckIfGameIsFinished())
+        {
             EndGame();
-        } else {
+        }
+        else
+        {
             ChangeActiveTeam();
         }
     }
 
-    private bool CheckIfGameIsFinished() {
+    private bool CheckIfGameIsFinished()
+    {
         Piece[] kingAttackingPieces = activePlayer.GetPieceAtackingOppositePiceOfType<King>();
-        if (kingAttackingPieces.Length > 0) {
+        if (kingAttackingPieces.Length > 0)
+        {
             ChessPlayer oppositePlayer = GetOpponentToPlayer(activePlayer);
             Piece attackedKing = oppositePlayer.GetPiecesOfType<King>().FirstOrDefault();
             oppositePlayer.RemoveMovesEnablingAttakOnPieceOfType<King>(activePlayer, attackedKing);
 
             int avaliableKingMoves = attackedKing.avaliableMoves.Count;
-            if (avaliableKingMoves == 0) {
+            if (avaliableKingMoves == 0)
+            {
                 bool canCoverKing = oppositePlayer.CanHidePieceFromAttack<King>(activePlayer);
                 if (!canCoverKing)
                     return true;
@@ -120,12 +139,14 @@ public class ChessGameController : MonoBehaviour {
         return false;
     }
 
-    private void EndGame() {
+    private void EndGame()
+    {
         SetGameState(GameState.Finished);
-       // UIManager.OnGameFinished(activePlayer.team.ToString());
+        // UIManager.OnGameFinished(activePlayer.team.ToString());
     }
 
-    public void RestartGame() {
+    public void RestartGame()
+    {
         DestroyPieces();
         board.OnGameRestarted();
         whitePlayer.OnGameRestarted();
@@ -133,25 +154,30 @@ public class ChessGameController : MonoBehaviour {
         StartNewGame();
     }
 
-    private void DestroyPieces() {
+    private void DestroyPieces()
+    {
         whitePlayer.activePieces.ForEach(p => Destroy(p.gameObject));
         blackPlayer.activePieces.ForEach(p => Destroy(p.gameObject));
     }
 
-    private void ChangeActiveTeam() {
+    private void ChangeActiveTeam()
+    {
         activePlayer = activePlayer == whitePlayer ? blackPlayer : whitePlayer;
     }
 
-    private ChessPlayer GetOpponentToPlayer(ChessPlayer player) {
+    private ChessPlayer GetOpponentToPlayer(ChessPlayer player)
+    {
         return player == whitePlayer ? blackPlayer : whitePlayer;
     }
 
-    internal void OnPieceRemoved(Piece piece) {
+    internal void OnPieceRemoved(Piece piece)
+    {
         ChessPlayer pieceOwner = (piece.team == TeamColor.White) ? whitePlayer : blackPlayer;
         pieceOwner.RemovePiece(piece);
     }
 
-    internal void RemoveMovesEnablingAttakOnPieceOfType<T>(Piece piece) where T : Piece {
+    internal void RemoveMovesEnablingAttakOnPieceOfType<T>(Piece piece) where T : Piece
+    {
         activePlayer.RemoveMovesEnablingAttakOnPieceOfType<T>(GetOpponentToPlayer(activePlayer), piece);
     }
 }

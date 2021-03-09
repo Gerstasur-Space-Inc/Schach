@@ -1,28 +1,30 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class KameraManager : MonoBehaviour {
+public class KameraManager : MonoBehaviour
+{
     // Start is called before the first frame update
 
     public Camera playCam;//Main Camera
     public Camera viewCam;//
     private bool isviewCam;
 
-    private void Awake() {
+    private void Awake()
+    {
         switchToplayCam();
     }
-    void Start() {
+    void Start()
+    {
 
     }
 
-    // Update is called once per frame
+
     void Update() {
         if (Input.GetKeyDown(KeyCode.V) && !isviewCam) {
             switchoViewCam();
             isviewCam = true;
 
         } else if (Input.GetKeyDown(KeyCode.V) && isviewCam) {
+
             switchToplayCam();
             isviewCam = false;
         }
@@ -31,13 +33,15 @@ public class KameraManager : MonoBehaviour {
     }
 
 
-    public void switchoViewCam() {
+    public void switchoViewCam()
+    {
 
         playCam.enabled = false;
         viewCam.enabled = true;
 
     }
-    public void switchToplayCam() {
+    public void switchToplayCam()
+    {
         viewCam.enabled = false;
         playCam.enabled = true;
 

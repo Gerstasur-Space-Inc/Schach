@@ -172,6 +172,7 @@ public class Board : MonoBehaviour
     }
 
     internal void OnGameRestarted()//Wenn das Spiel neu gestartet
+
     {
         selectedPiece = null;
         CreateGrid();

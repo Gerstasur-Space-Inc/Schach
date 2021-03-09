@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Kamera : MonoBehaviour
 {
@@ -16,7 +14,7 @@ public class Kamera : MonoBehaviour
 
     public int zoom;
     private Vector3 mousePos;
-   
+
     void Start()
     {
         Debug.Log("Mouse Pos: " + mousePos);
@@ -27,12 +25,15 @@ public class Kamera : MonoBehaviour
     {
         RotateX = Input.GetAxis("Horizontal");
         RotateY = Input.GetAxis("Vertical");
+
         // RotateZ = Input.mouseScrollDelta.y;
              
         rotateCam();//kamera entsprechend drehen       
+
     }
-   
-    void rotateCam() {
+
+    void rotateCam()
+    {
 
         transform.Rotate(Vector3.up, RotateX * Time.deltaTime * XRotateSpeed * XRotateSpeed); //quadratisch: bessere Nutzerinteraktion
         transform.Rotate(Vector3.right, RotateY * Time.deltaTime * YRotateSpeed * YRotateSpeed);
