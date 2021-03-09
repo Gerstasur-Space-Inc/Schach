@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Kamera2 : MonoBehaviour
+public class KameraMovementVertical : MonoBehaviour
 {
     private float RotateSpeed;
     private Vector3 mousePosVorher;

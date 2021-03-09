@@ -12,7 +12,7 @@ public class HorizontalKameraMove : MonoBehaviour
 
     void Start()
     {
-        Kamera2 K2 = new Kamera2();
+        KameraMovementVertical K2 = new KameraMovementVertical();
         RotateSpeed = K2.GetRotateSpeed();
     }
 
