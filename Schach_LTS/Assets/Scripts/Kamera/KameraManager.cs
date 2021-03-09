@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class KameraManager : MonoBehaviour {
     // Start is called before the first frame update
+   
 
     public Camera playCam;//Main Camera
     public Camera viewCam;//
@@ -23,16 +24,9 @@ public class KameraManager : MonoBehaviour {
             isviewCam = true;
 
         } else if (Input.GetKeyDown(KeyCode.V) && isviewCam) {
-=======
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            switchoViewCam();
-        }
-        else if (Input.GetKeyDown(KeyCode.B))
-        {
->>>>>>> parent of 2e46235 (Merge pull request #7 from Gerstasur-Space-Inc/Kamera-verbesserung)
+
+
+
             switchToplayCam();
         }
 
