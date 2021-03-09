@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Kamera2 : MonoBehaviour
 {
-    private float RotateSpeed = 200;
+    private float RotateSpeed;
+    private Vector3 mousePosVorher;
+    private Vector3 mousePosAktuell;
+    private Vector3 mousePosDiff;
 
     void Start()
     {
@@ -14,6 +17,11 @@ public class Kamera2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        mousePosVorher = mousePosAktuell;
+        mousePosAktuell = Input.mousePosition;
+        mousePosDiff = mousePosVorher - mousePosAktuell;
+        RotateSpeed = mousePosDiff.x * 50;
+
         rotateCam(); //kamera entsprechend drehen  
     }
 
@@ -21,25 +29,13 @@ public class Kamera2 : MonoBehaviour
     {
         if (Input.GetMouseButton(2) && Input.GetAxis("Mouse X") < 0)
         {
-            transform.Rotate(Vector3.up * Time.deltaTime * RotateSpeed * -1);
+            transform.Rotate(Vector3.up * Time.deltaTime * RotateSpeed);
            
         }
         else if (Input.GetMouseButton(2) && Input.GetAxis("Mouse X") > 0)
         {
-            transform.Rotate(Vector3.up * Time.deltaTime * RotateSpeed);
-         
+            transform.Rotate(Vector3.up * Time.deltaTime * RotateSpeed);         
         }
-       /* else if (Input.GetMouseButton(2) && Input.GetAxis("Mouse Y") < 0)
-        {
-            transform.Rotate(Vector3.left * Time.deltaTime * RotateSpeed * -1);
-           
-        }
-        else if (Input.GetMouseButton(2) && Input.GetAxis("Mouse Y") > 0)   
-        {
-            transform.Rotate(Vector3.left * Time.deltaTime * RotateSpeed);
-           
-        }*/
-
     }
 
   public  float GetRotateSpeed()
