@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class ColliderInputReciever : InputReciever {
     private Vector3 clickPosition;
+
+    public Camera playCam;//Main Camera
+    public Camera viewCam;//
+
+
     void Update() {
         if (Input.GetMouseButtonDown(0)) {
             RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray =playCam.isActiveAndEnabled ? playCam.ScreenPointToRay(Input.mousePosition) : viewCam.ScreenPointToRay(Input.mousePosition);
+            
             if (Physics.Raycast(ray, out hit)) {
                 clickPosition = hit.point;
                 OnInputRecieved();
