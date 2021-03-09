@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Kamera : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // ALTE VERSION DER KAMERA::: BEWEGUNG MIT DER TASTATUR
 
     private float RotateX = 5.0f;
     private float RotateY = 5.0f;
