@@ -171,7 +171,11 @@ public class Board : MonoBehaviour
         chessController.CreatePieceAndInitialize(piece.occupiedSquare, piece.team, typeof(Queen));
     }
 
+<<<<<<< HEAD
     internal void OnGameRestarted()//Wenn das Spiel neu gestartet
+=======
+    internal void OnGameRestarted()
+>>>>>>> parent of 2e46235 (Merge pull request #7 from Gerstasur-Space-Inc/Kamera-verbesserung)
     {
         selectedPiece = null;
         CreateGrid();

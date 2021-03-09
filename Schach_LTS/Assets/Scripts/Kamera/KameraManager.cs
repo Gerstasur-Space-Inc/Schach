@@ -7,7 +7,6 @@ public class KameraManager : MonoBehaviour {
 
     public Camera playCam;//Main Camera
     public Camera viewCam;//
-    private bool isviewCam;
 
     private void Awake() {
         switchToplayCam();
@@ -17,14 +16,24 @@ public class KameraManager : MonoBehaviour {
     }
 
     // Update is called once per frame
+<<<<<<< HEAD
     void Update() {
         if (Input.GetKeyDown(KeyCode.V) && !isviewCam) {
             switchoViewCam();
             isviewCam = true;
 
         } else if (Input.GetKeyDown(KeyCode.V) && isviewCam) {
+=======
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            switchoViewCam();
+        }
+        else if (Input.GetKeyDown(KeyCode.B))
+        {
+>>>>>>> parent of 2e46235 (Merge pull request #7 from Gerstasur-Space-Inc/Kamera-verbesserung)
             switchToplayCam();
-            isviewCam = false;
         }
 
 

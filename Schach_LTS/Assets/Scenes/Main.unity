@@ -484,6 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da0bf32ccb74e824a908813c70f13e7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   bottomLeftSquareTransform: {fileID: 1073381006}
   squareSize: 1.5
 --- !u!114 &1068835983
@@ -534,6 +535,8 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 139539619}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> parent of 2e46235 (Merge pull request #7 from Gerstasur-Space-Inc/Kamera-verbesserung)
 --- !u!1 &1328525613
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,10 +615,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1596282832}
   - component: {fileID: 1596282831}
+  - component: {fileID: 1596282830}
   - component: {fileID: 1596282829}
   - component: {fileID: 1596282833}
   - component: {fileID: 1596282834}
-  - component: {fileID: 1596282830}
   m_Layer: 0
   m_Name: KameraHolder
   m_TagString: Untagged
@@ -636,18 +639,45 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1596282830
-MonoBehaviour:
+--- !u!23 &1596282830
+MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596282828}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3704b1e0ded875142885ee54635b3066, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!33 &1596282831
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -667,7 +697,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
-  - {fileID: 1644527804}
+  - {fileID: 2119481237}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 2.11, y: 20.92, z: 0}
@@ -686,7 +716,7 @@ MonoBehaviour:
   XRotateSpeed: 10
   YRotateSpeed: 10
   ZRotateSpeed: 25
-  zoom: 10
+  zoom: 0
 --- !u!114 &1596282834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -701,6 +731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playCam: {fileID: 963194227}
   viewCam: {fileID: 2119481239}
+<<<<<<< HEAD
 --- !u!1 &1644527803
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,6 +865,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> parent of 2e46235 (Merge pull request #7 from Gerstasur-Space-Inc/Kamera-verbesserung)
 --- !u!1 &2119481236
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,11 +893,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119481236}
-  m_LocalRotation: {x: 0.16879605, y: -0, z: -0.0000000037252903, w: 0.9856511}
-  m_LocalPosition: {x: 0.011500006, y: 0.0846, z: -0.21019998}
+  m_LocalRotation: {x: 0.16879603, y: -0, z: -0, w: 0.985651}
+  m_LocalPosition: {x: 0.0115, y: 0.0846, z: -0.2102}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1644527804}
+  m_Father: {fileID: 1596282832}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 19.436, y: 0, z: 0}
 --- !u!81 &2119481238
@@ -930,6 +963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eff3e45a82ab99941adbfd9692cfb1c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
 --- !u!1 &1089266829029131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1161,6 +1195,12 @@ MeshFilter:
   m_Mesh: {fileID: 4300000, guid: 34844fab031efd7428463c208a0e841d, type: 3}
 --- !u!33 &33391409264045575
 MeshFilter:
+=======
+  zoom: 0
+  zoompeed: 5
+--- !u!1001 &187435803686173037
+PrefabInstance:
+>>>>>>> parent of 2e46235 (Merge pull request #7 from Gerstasur-Space-Inc/Kamera-verbesserung)
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}

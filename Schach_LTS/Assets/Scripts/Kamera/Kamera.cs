@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Kamera : MonoBehaviour
 {
-    // ALTE VERSION DER KAMERA::: BEWEGUNG MIT DER TASTATUR
+    // Start is called before the first frame update
 
     private float RotateX = 5.0f;
     private float RotateY = 5.0f;
@@ -14,9 +14,15 @@ public class Kamera : MonoBehaviour
     public float YRotateSpeed;
     public float ZRotateSpeed;
 
+
     public int zoom;
     private Vector3 mousePos;
+<<<<<<< HEAD
    
+=======
+
+
+>>>>>>> parent of 2e46235 (Merge pull request #7 from Gerstasur-Space-Inc/Kamera-verbesserung)
     void Start()
     {
         Debug.Log("Mouse Pos: " + mousePos);
@@ -27,16 +33,29 @@ public class Kamera : MonoBehaviour
     {
         RotateX = Input.GetAxis("Horizontal");
         RotateY = Input.GetAxis("Vertical");
+<<<<<<< HEAD
         // RotateZ = Input.mouseScrollDelta.y;
              
         rotateCam();//kamera entsprechend drehen       
+=======
+        RotateZ = Input.mouseScrollDelta.y;
+
+
+
+        rotateCam();//kamera entsprechend drehen
+
+
+
+
+>>>>>>> parent of 2e46235 (Merge pull request #7 from Gerstasur-Space-Inc/Kamera-verbesserung)
     }
    
     void rotateCam() {
 
-        transform.Rotate(Vector3.up, RotateX * Time.deltaTime * XRotateSpeed * XRotateSpeed); //quadratisch: bessere Nutzerinteraktion
+        transform.Rotate(Vector3.up, RotateX * Time.deltaTime * XRotateSpeed * XRotateSpeed);//quadratisch: bessere Nutzerinteraktion
         transform.Rotate(Vector3.right, RotateY * Time.deltaTime * YRotateSpeed * YRotateSpeed);
-        // transform.Rotate(Vector3.forward, RotateZ * Time.deltaTime * ZRotateSpeed * ZRotateSpeed);
+        transform.Rotate(Vector3.forward, RotateZ * Time.deltaTime * ZRotateSpeed * ZRotateSpeed);
+
 
     }
 }
