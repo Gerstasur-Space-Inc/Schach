@@ -1,24 +1,24 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(SquareSelectorCreator))] //SquareSelectorCreator muss bei dem Gameobject hinzugefügt sein
+[RequireComponent(typeof(SquareSelectorCreator))]
 public class Board : MonoBehaviour
 {
-    public const int BOARD_SIZE = 8;//8x8 Brett
+    public const int BOARD_SIZE = 8;
 
-    [SerializeField] private Transform bottomLeftSquareTransform;//Koordinaten des unteren linken Quadrats (für die Berechnung von den Zugweiten und Zügen)
+    [SerializeField] private Transform bottomLeftSquareTransform;
     [SerializeField] private float squareSize;
 
-    private Piece[,] grid;//2D Array vom Feld
-    private Piece selectedPiece; // Ausgewählte figur, für die alles berechnet wird...
-    private ChessGameController chessController; //
+    private Piece[,] grid;
+    private Piece selectedPiece;
+    private ChessGameController chessController;
     private SquareSelectorCreator squareSelector;
 
 
     private void Awake()
     {
-        squareSelector = GetComponent<SquareSelectorCreator>(); //initialisierung von square selector
-        CreateGrid();//und grid
+        squareSelector = GetComponent<SquareSelectorCreator>();
+        CreateGrid();
     }
 
     public void SetDependencies(ChessGameController chessController)
@@ -28,34 +28,34 @@ public class Board : MonoBehaviour
 
 
 
-    private void CreateGrid() //initialisierung von dem Feld
+    private void CreateGrid()
     {
         grid = new Piece[BOARD_SIZE, BOARD_SIZE];
     }
 
-    public Vector3 CalculatePositionFromCoords(Vector2Int coords) //Umrechnung von Position in feld || wo steht eine Figur mit den gegebenen Koordinaten
+    public Vector3 CalculatePositionFromCoords(Vector2Int coords)
     {
         return bottomLeftSquareTransform.position + new Vector3(coords.x * squareSize, 0f, coords.y * squareSize);
     }
 
-    private Vector2Int CalculateCoordsFromPosition(Vector3 inputPosition) //andere Richtung
+    private Vector2Int CalculateCoordsFromPosition(Vector3 inputPosition)
     {
         int x = Mathf.FloorToInt(transform.InverseTransformPoint(inputPosition).x / squareSize) + BOARD_SIZE / 2;
         int y = Mathf.FloorToInt(transform.InverseTransformPoint(inputPosition).z / squareSize) + BOARD_SIZE / 2;
         return new Vector2Int(x, y);
     }
 
-    public void OnSquareSelected(Vector3 inputPosition)// Wenn ein feld ausgeählt wurde (an der position inputPosition)
+    public void OnSquareSelected(Vector3 inputPosition)
     {
-        Vector2Int coords = CalculateCoordsFromPosition(inputPosition);//Koordinaten berechnen
-        Piece piece = GetPieceOnSquare(coords);// genaues Figur importieren
+        Vector2Int coords = CalculateCoordsFromPosition(inputPosition);
+        Piece piece = GetPieceOnSquare(coords);
         if (selectedPiece)
         {
-            if (piece != null && selectedPiece == piece)// Wenn die Figur nicht leer UND die Ausgewählte Figur der figur an dieser Position ist
-                DeselectPiece();//Figur abwählen
-            else if (piece != null && selectedPiece != piece && chessController.IsTeamTurnActive(piece.team))// wenn die Figur nicht null UND die ausgewählte Figur nicht die Figur ist und dieses Team am Zug ist:
-                SelectPiece(piece);//wähle diese Figur  aus
-            else if (selectedPiece.CanMoveTo(coords))//Wenn die 
+            if (piece != null && selectedPiece == piece)
+                DeselectPiece();
+            else if (piece != null && selectedPiece != piece && chessController.IsTeamTurnActive(piece.team))
+                SelectPiece(piece);
+            else if (selectedPiece.CanMoveTo(coords))
                 OnSelectedPieceMoved(coords, selectedPiece);
         }
         else
@@ -171,7 +171,7 @@ public class Board : MonoBehaviour
         chessController.CreatePieceAndInitialize(piece.occupiedSquare, piece.team, typeof(Queen));
     }
 
-    internal void OnGameRestarted()
+    internal void OnGameRestarted()//Wenn das Spiel neu gestartet
     {
         selectedPiece = null;
         CreateGrid();
