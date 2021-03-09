@@ -1,7 +1,7 @@
 ﻿
 public enum GameState
 {
-    Init, Play, Finished
+	Init, Play, Finished
 }
 
 
