@@ -2,11 +2,8 @@
 
 public class KameraZoom : MonoBehaviour
 {
-
-
-
-    public int zoom;
-    public float zoompeed;
+    private float zoom;
+    private float zoomspeed = 300;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,27 +13,15 @@ public class KameraZoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.KeypadMinus))
-        {//Zoom wird auf positiv / negativ oder null gesetzt
-            zoom = 1;
-        }
-        else if (Input.GetKeyDown(KeyCode.KeypadPlus))
-        {
-            zoom = -1;
-        }
-        if (Input.GetKeyUp(KeyCode.KeypadMinus) || Input.GetKeyUp(KeyCode.KeypadPlus))
-        {
-            zoom = 0;
-        }
-
+        zoom = Input.mouseScrollDelta.y;
 
         zoomCam();
-
     }
-    void zoomCam()
+
+    void zoomCam() 
+
     {
 
-        transform.Translate(Vector3.forward * Time.deltaTime * zoom * zoompeed);
+        transform.Translate(Vector3.forward * Time.deltaTime * zoom * zoomspeed);
     }
 }

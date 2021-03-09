@@ -6,6 +6,7 @@ public class KameraManager : MonoBehaviour
 
     public Camera playCam;//Main Camera
     public Camera viewCam;//
+    private bool isviewCam;
 
     private void Awake()
     {
@@ -16,16 +17,16 @@ public class KameraManager : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.V))
-        {
+
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.V) && !isviewCam) {
             switchoViewCam();
-        }
-        else if (Input.GetKeyDown(KeyCode.B))
-        {
+            isviewCam = true;
+
+        } else if (Input.GetKeyDown(KeyCode.V) && isviewCam) {
+
             switchToplayCam();
+            isviewCam = false;
         }
 
 
