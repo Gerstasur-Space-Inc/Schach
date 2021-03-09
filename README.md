@@ -1,10 +1,12 @@
 # Schach
-
+***
 ***
 
 ## **Tastaturbelegung:**
 ### Kameraperspektive
-  -**'V'|| 'B'**:   Wechselt den Kameramodus
+  -**'V'**:   Wechselt in den Kameramodus, in dem man sich umschauen kann
+  
+  -**'B'**:   Wechselt in den Kameramodus, um zu spielen
   
 ### Zoom
   -**' - '**:   Vergrößert das Bild
@@ -12,7 +14,7 @@
   
 ### Rotation
   -Pfeiltasten und Mausrad
-  
+
 ***
 
 Unity Version: neueste LTS: 2019.4.21f1
