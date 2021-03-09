@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class KameraManager : MonoBehaviour {
-   
+    // Start is called before the first frame update
 
     public Camera playCam;//Main Camera
     public Camera viewCam;//
+    private bool isviewCam;
 
     private void Awake() {
         switchToplayCam();
@@ -15,17 +16,15 @@ public class KameraManager : MonoBehaviour {
 
     }
 
-
+    // Update is called once per frame
     void Update() {
         if (Input.GetKeyDown(KeyCode.V) && !isviewCam) {
             switchoViewCam();
             isviewCam = true;
 
         } else if (Input.GetKeyDown(KeyCode.V) && isviewCam) {
-
-
-
             switchToplayCam();
+            isviewCam = false;
         }
 
 
