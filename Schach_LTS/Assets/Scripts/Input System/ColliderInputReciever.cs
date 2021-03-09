@@ -16,7 +16,7 @@ public class ColliderInputReciever : InputReciever {
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = playCam.enabled ? playCam.ScreenPointToRay(Input.mousePosition) : viewCam.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
             {
 
