@@ -4,7 +4,7 @@
 
 ## **Tastaturbelegung:**
 ### Kameraperspektive
-  -**'V'**:   Wechselt in den Kameramodus
+  -**'V'|| 'B'**:   Wechselt den Kameramodus
   
 ### Zoom
   -**' - '**:   Vergrößert das Bild
