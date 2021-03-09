@@ -4,9 +4,7 @@
 
 ## **Tastaturbelegung:**
 ### Kameraperspektive
-  -**'V'**:   Wechselt in den Kameramodus, in dem man sich umschauen kann
-  
-  -**'B'**:   Wechselt in den Kameramodus, um zu spielen
+  -**'V'**:   Wechselt in den Kameramodus
   
 ### Zoom
   -**' - '**:   Vergrößert das Bild
