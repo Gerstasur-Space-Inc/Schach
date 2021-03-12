@@ -673,10 +673,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 34b9de1d-c35a-43ba-a16c-19e31ff95173
+  cloudProjectId: f6ff3f30-0f54-43dc-b7d6-bb86ee37e176
   framebufferDepthMemorylessMode: 0
-  projectName: Chess Sketch (1)
-  organizationId: spacexerdragon5
+  projectName: Chess Sketch
+  organizationId: leafar2_0
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
