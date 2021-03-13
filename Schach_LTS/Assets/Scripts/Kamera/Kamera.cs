@@ -8,18 +8,16 @@ public class Kamera : MonoBehaviour
 
     private float RotateX = 5.0f;
     private float RotateY = 5.0f;
-    private float RotateZ = 5.0f;
 
     public float XRotateSpeed;
     public float YRotateSpeed;
-    public float ZRotateSpeed;
 
     public int zoom;
     private Vector3 mousePos;
    
     void Start()
     {
-        Debug.Log("Mouse Pos: " + mousePos);
+
     }
 
     // Update is called once per frame
