@@ -14,7 +14,9 @@ public class Bishop : Piece {
     };
     public override List<Vector2Int> SelectAvaliableSquares() {
         avaliableMoves.Clear();
+
         float range = Board.BOARD_SIZE;
+
         foreach (var direction in directions) {
             for (int i = 1; i <= range; i++) {
                 Vector2Int nextCoords = occupiedSquare + direction * i;
