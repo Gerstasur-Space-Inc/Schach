@@ -33,8 +33,5 @@ public class KameraMovementVertical : MonoBehaviour
         }
     }
 
-  public  float GetRotateSpeed()
-    {
-        return RotateSpeed;
-    }
+ 
 }

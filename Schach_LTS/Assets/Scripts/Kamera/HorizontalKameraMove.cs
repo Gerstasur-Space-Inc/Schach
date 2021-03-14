@@ -12,8 +12,6 @@ public class HorizontalKameraMove : MonoBehaviour
 
     void Start()
     {
-        KameraMovementVertical K2 = new KameraMovementVertical();
-        RotateSpeed = K2.GetRotateSpeed();
     }
 
     // Update is called once per frame
