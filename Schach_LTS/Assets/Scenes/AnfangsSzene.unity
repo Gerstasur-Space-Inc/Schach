@@ -695,7 +695,7 @@ MonoBehaviour:
   SMAAQuality: 2
   dithering: 0
   stopNaNs: 0
-  taaSharpenStrength: 0.637
+  taaSharpenStrength: 0.65
   physicalParameters:
     m_Iso: 200
     m_ShutterSpeed: 0.005
