@@ -1008,7 +1008,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   XRotateSpeed: 10
   YRotateSpeed: 10
-  ZRotateSpeed: 25
   zoom: 10
 --- !u!114 &1596282834
 MonoBehaviour:
