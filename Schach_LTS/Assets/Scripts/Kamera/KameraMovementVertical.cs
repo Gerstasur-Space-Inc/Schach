@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class KameraMovementVertical : MonoBehaviour
 {
+    private float MultipliedRotatespeedVertical = 20;
     private float RotateSpeed;
     private Vector3 mousePosVorher;
     private Vector3 mousePosAktuell;
@@ -20,7 +21,7 @@ public class KameraMovementVertical : MonoBehaviour
         mousePosVorher = mousePosAktuell;
         mousePosAktuell = Input.mousePosition;
         mousePosDiff = mousePosVorher - mousePosAktuell;
-        RotateSpeed = mousePosDiff.x * 50;
+        RotateSpeed = mousePosDiff.x * MultipliedRotatespeedVertical;
 
         rotateCam(); //kamera entsprechend drehen  
     }

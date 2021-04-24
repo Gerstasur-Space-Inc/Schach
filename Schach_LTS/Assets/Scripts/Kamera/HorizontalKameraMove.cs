@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HorizontalKameraMove : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private float MultipliedRotatespeedHorizontal = 20;
     private float RotateSpeed;
     private Vector3 mousePosVorher;
     private Vector3 mousePosAktuell;
@@ -20,7 +20,7 @@ public class HorizontalKameraMove : MonoBehaviour
         mousePosVorher = mousePosAktuell;
         mousePosAktuell = Input.mousePosition;
         mousePosDiff = mousePosVorher - mousePosAktuell;
-        RotateSpeed = mousePosDiff.y * 50;
+        RotateSpeed = mousePosDiff.y * MultipliedRotatespeedHorizontal;
 
         rotateCamVertical();
     }
