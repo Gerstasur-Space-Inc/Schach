@@ -9,7 +9,7 @@ public class Kamera : MonoBehaviour
     private float RotateX = 5.0f;
     private float RotateY = 5.0f;
 
-    public float XRotateSpeed;
+    public float XRotateSpeed; 
     public float YRotateSpeed;
 
     public int zoom;
