@@ -12,11 +12,11 @@ public class KameraManager : MonoBehaviour
     private bool isviewCam;
 
     private void Awake()
-    {
+    {switchToplayCamWhite();
     }
     void Start()
     {
-        switchToplayCamWhite();
+        
     }
 
     // Update is called once per frame
@@ -52,20 +52,27 @@ public class KameraManager : MonoBehaviour
     }
 
 
+    public void deactivateAllCams()
+    {
+        playCamBlack.enabled = false;
+        playCamWhite.enabled = false;
+        viewCam.enabled = false;
+    }
+
     public void switchoViewCam()
     {
-        playCamWhite.enabled = false;
-        playCamBlack.enabled = false;
+        deactivateAllCams();
+       
         viewCam.enabled = true;
     }
     public void switchToplayCamWhite()
     {
-        viewCam.enabled = false;
+        deactivateAllCams();
         playCamWhite.enabled = true;
     }
     public void switchToplayCamBlack()
     {
-        viewCam.enabled = false;
+        deactivateAllCams();
         playCamBlack.enabled = true;
     }
 }
