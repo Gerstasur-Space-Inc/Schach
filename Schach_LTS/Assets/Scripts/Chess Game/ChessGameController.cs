@@ -16,9 +16,9 @@ public class ChessGameController : MonoBehaviour {
     //[SerializeField] private ChessUIManager UIManager;
 
     private PiecesCreator pieceCreator;
-    private ChessPlayer whitePlayer;
-    private ChessPlayer blackPlayer;
-    private ChessPlayer activePlayer;
+    public ChessPlayer whitePlayer;
+    public ChessPlayer blackPlayer;
+    public ChessPlayer activePlayer;
 
     private GameState state;
 
@@ -31,7 +31,8 @@ public class ChessGameController : MonoBehaviour {
         pieceCreator = GetComponent<PiecesCreator>();
     }
 
-    private void CreatePlayers() {
+    public void CreatePlayers() 
+    {
         whitePlayer = new ChessPlayer(TeamColor.White, board);
         blackPlayer = new ChessPlayer(TeamColor.Black, board);
     }

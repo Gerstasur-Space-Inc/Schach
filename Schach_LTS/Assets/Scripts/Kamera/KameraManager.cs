@@ -2,45 +2,70 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KameraManager : MonoBehaviour {
+public class KameraManager : MonoBehaviour
+{
     // Start is called before the first frame update
-
-    public Camera playCam;//Main Camera
-    public Camera viewCam;//
+    public ChessGameController chessGameController;
+    [SerializeField] public Camera playCamWhite;
+    [SerializeField] public Camera playCamBlack;
+    [SerializeField] public Camera viewCam;
     private bool isviewCam;
 
-    private void Awake() {
-        switchToplayCam();
+    private void Awake()
+    {
     }
-    void Start() {
-
+    void Start()
+    {
+        switchToplayCamWhite();
     }
 
     // Update is called once per frame
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.V) && !isviewCam) {
+    void Update()
+    {
+        if (chessGameController.activePlayer == chessGameController.whitePlayer && !viewCam)
+        {
+            switchToplayCamWhite();
+            isviewCam = false;
+        }
+        else if (chessGameController.activePlayer == chessGameController.blackPlayer && !viewCam)
+        {
+            switchToplayCamBlack();
+            isviewCam = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.V) && !isviewCam)
+        {
             switchoViewCam();
             isviewCam = true;
 
-        } else if (Input.GetKeyDown(KeyCode.V) && isviewCam) {
-            switchToplayCam();
+        }
+        else if ((Input.GetKeyDown(KeyCode.V) && chessGameController.activePlayer == chessGameController.whitePlayer && isviewCam) || chessGameController.activePlayer == chessGameController.whitePlayer && !viewCam)
+        {
+            switchToplayCamWhite();
+            isviewCam = false;
+        }
+        else if ((Input.GetKeyDown(KeyCode.V) && chessGameController.activePlayer == chessGameController.blackPlayer && isviewCam) || chessGameController.activePlayer == chessGameController.blackPlayer && !viewCam)
+        {
+            switchToplayCamBlack();
             isviewCam = false;
         }
 
-
     }
 
 
-    public void switchoViewCam() {
-
-        playCam.enabled = false;
+    public void switchoViewCam()
+    {
+        playCamWhite.enabled = false;
+        playCamBlack.enabled = false;
         viewCam.enabled = true;
-
     }
-    public void switchToplayCam() {
+    public void switchToplayCamWhite()
+    {
         viewCam.enabled = false;
-        playCam.enabled = true;
-
-
+        playCamWhite.enabled = true;
+    }
+    public void switchToplayCamBlack()
+    {
+        viewCam.enabled = false;
+        playCamBlack.enabled = true;
     }
 }

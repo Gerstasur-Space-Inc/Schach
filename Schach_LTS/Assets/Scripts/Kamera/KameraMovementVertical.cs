@@ -12,7 +12,7 @@ public class KameraMovementVertical : MonoBehaviour
 
     void Start()
     {
-
+  
     }
 
     // Update is called once per frame
