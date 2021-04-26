@@ -6,8 +6,10 @@ public class ColliderInputReciever : InputReciever {
     private Vector3 clickPosition;
 
 
-    public Camera playCam;//Main Camera
+   
     public Camera viewCam;//
+    public Camera WhiteTeamCam;
+    public Camera BlackTeamCam;
 
 
 
@@ -16,7 +18,7 @@ public class ColliderInputReciever : InputReciever {
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
-            Ray ray = playCam.enabled ? playCam.ScreenPointToRay(Input.mousePosition) : viewCam.ScreenPointToRay(Input.mousePosition);
+            Ray ray = camRay();
             if (Physics.Raycast(ray, out hit))
             {
 
@@ -24,6 +26,16 @@ public class ColliderInputReciever : InputReciever {
                 OnInputRecieved();
             }
         }
+    }
+
+
+    public Ray camRay()
+    {
+        if (WhiteTeamCam.enabled)
+            return WhiteTeamCam.ScreenPointToRay(Input.mousePosition);
+        if (BlackTeamCam.enabled)
+            return BlackTeamCam.ScreenPointToRay(Input.mousePosition);
+        return viewCam.ScreenPointToRay(Input.mousePosition);
     }
 
     public override void OnInputRecieved() {
