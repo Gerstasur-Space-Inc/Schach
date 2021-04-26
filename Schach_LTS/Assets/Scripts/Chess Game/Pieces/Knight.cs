@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Knight : Piece {
 
+
+	
+
+	
+
 	Vector2Int[] offsets = new Vector2Int[]
 	 {
 		new Vector2Int(2, 1),
@@ -16,7 +21,15 @@ public class Knight : Piece {
 		new Vector2Int(-1, -2),
 	 };
 
-	public override List<Vector2Int> SelectAvaliableSquares() {
+
+    private void Start()
+    {
+        if(team == TeamColor.White)
+        {
+			transform.Rotate(0,0,180);
+        }
+    }
+    public override List<Vector2Int> SelectAvaliableSquares() {
 		avaliableMoves.Clear();
 
 		for (int i = 0; i < offsets.Length; i++) {
