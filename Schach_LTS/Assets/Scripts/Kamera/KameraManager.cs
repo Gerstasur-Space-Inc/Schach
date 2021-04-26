@@ -11,6 +11,8 @@ public class KameraManager : MonoBehaviour
     [SerializeField] public Camera viewCam;
     private bool isviewCam;
 
+    [SerializeField] private float Camdelay = 2;
+
     private void Awake()
     {switchToplayCamWhite();
     }
@@ -34,14 +36,38 @@ public class KameraManager : MonoBehaviour
 
         if(chessGameController.activePlayer == chessGameController.whitePlayer)
         {
-            switchToplayCamWhite();
+            // switchToplayCamWhite();
+            StartCoroutine(SwitchToPlayCamWhiteDelay(Camdelay));
         }
 
         if(chessGameController.activePlayer == chessGameController.blackPlayer)
         {
-            switchToplayCamBlack();
+            //switchToplayCamBlack();
+            StartCoroutine(SwitchToPlayCamBlackDelay(Camdelay));
         }
     }
+
+
+
+    public IEnumerator SwitchToPlayCamWhiteDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        switchToplayCamWhite();
+    }
+
+    public IEnumerator SwitchToPlayCamBlackDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        switchToplayCamBlack();
+    }
+
+    public IEnumerator SwitchToViewCamDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        switchoViewCam();
+    }
+
+
     private void changeCam()
     {
         if (chessGameController.activePlayer == chessGameController.whitePlayer && !viewCam)
