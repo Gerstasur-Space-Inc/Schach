@@ -9,10 +9,10 @@ public class KameraManager : MonoBehaviour
     [SerializeField] public Camera playCamWhite;
     [SerializeField] public Camera playCamBlack;
     [SerializeField] public Camera viewCam;
-    private bool isviewCam;
 
     private void Awake()
-    {switchToplayCamWhite();
+    {
+        switchToplayCamWhite();
     }
     void Start()
     {
@@ -24,7 +24,6 @@ public class KameraManager : MonoBehaviour
     {
         //changeCam();
 
-
         changecam2();
     }
 
@@ -32,46 +31,35 @@ public class KameraManager : MonoBehaviour
    private void  changecam2()
     {
 
-        if(chessGameController.activePlayer == chessGameController.whitePlayer)
+        if((chessGameController.activePlayer == chessGameController.whitePlayer) && viewCam.enabled == false)
         {
             switchToplayCamWhite();
         }
 
-        if(chessGameController.activePlayer == chessGameController.blackPlayer)
+        if(chessGameController.activePlayer == chessGameController.blackPlayer && viewCam.enabled == false)
         {
             switchToplayCamBlack();
         }
-    }
-    private void changeCam()
-    {
-        if (chessGameController.activePlayer == chessGameController.whitePlayer && !viewCam)
-        {
-            switchToplayCamWhite();
-            isviewCam = false;
-        }
-        else if (chessGameController.activePlayer == chessGameController.blackPlayer && !viewCam)
-        {
-            switchToplayCamBlack();
-            isviewCam = false;
-        }
-        else if (Input.GetKeyDown(KeyCode.V) && !isviewCam)
+
+        if (Input.GetKeyDown(KeyCode.V) && viewCam.enabled == false)
         {
             switchoViewCam();
-            isviewCam = true;
+        }
 
-        }
-        else if ((Input.GetKeyDown(KeyCode.V) && chessGameController.activePlayer == chessGameController.whitePlayer && isviewCam) || chessGameController.activePlayer == chessGameController.whitePlayer && !viewCam)
+        else if (Input.GetKeyDown(KeyCode.V) && viewCam.enabled == true)
         {
-            switchToplayCamWhite();
-            isviewCam = false;
-        }
-        else if ((Input.GetKeyDown(KeyCode.V) && chessGameController.activePlayer == chessGameController.blackPlayer && isviewCam) || chessGameController.activePlayer == chessGameController.blackPlayer && !viewCam)
-        {
-            switchToplayCamBlack();
-            isviewCam = false;
+            if (chessGameController.activePlayer == chessGameController.whitePlayer)
+            {
+                switchToplayCamWhite();
+            }
+
+            if (chessGameController.activePlayer == chessGameController.blackPlayer)
+            {
+                switchToplayCamBlack();
+            }
         }
     }
-
+   
     public void deactivateAllCams()
     {
         playCamBlack.enabled = false;
@@ -95,4 +83,5 @@ public class KameraManager : MonoBehaviour
         deactivateAllCams();
         playCamBlack.enabled = true;
     }
+
 }
