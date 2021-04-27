@@ -948,7 +948,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 546758234}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &546758238
 Camera:
   m_ObjectHideFlags: 0
@@ -1331,7 +1331,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -1525,6 +1525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bottomLeftSquareTransform: {fileID: 1073381006}
   squareSize: 1.5
+  PieceSelectorPrefab: {fileID: 0}
 --- !u!114 &1068835983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1786,10 +1787,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d6a48897975b947a4badf7c258d460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chessGameController: {fileID: 0}
-  playCamWhite: {fileID: 0}
-  playCamBlack: {fileID: 0}
-  viewCam: {fileID: 0}
+  chessGameController: {fileID: 1328525614}
+  playCamWhite: {fileID: 546758238}
+  playCamBlack: {fileID: 963194227}
+  viewCam: {fileID: 2119481239}
+  Camdelay: 2
 --- !u!1 &1644527803
 GameObject:
   m_ObjectHideFlags: 0

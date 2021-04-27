@@ -14,6 +14,8 @@ public class Board : MonoBehaviour
     private ChessGameController chessController;
     private SquareSelectorCreator squareSelector;
 
+    
+
 
     private void Awake()
     {
@@ -73,6 +75,7 @@ public class Board : MonoBehaviour
         selectedPiece = piece;
         List<Vector2Int> selection = selectedPiece.avaliableMoves;
         ShowSelectionSquares(selection);
+
     }
 
     private void ShowSelectionSquares(List<Vector2Int> selection)

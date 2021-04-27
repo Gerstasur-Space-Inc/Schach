@@ -98,6 +98,8 @@ public class KameraManager : MonoBehaviour
         }
     }
 
+
+    #region Camera methods
     public void deactivateAllCams()
     {
         playCamBlack.enabled = false;
@@ -121,4 +123,5 @@ public class KameraManager : MonoBehaviour
         deactivateAllCams();
         playCamBlack.enabled = true;
     }
+    #endregion
 }
