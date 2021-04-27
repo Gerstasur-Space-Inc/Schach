@@ -559,6 +559,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3681098620830676185, guid: 14097af65cfb5a945ae21f3afb3b8cea,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3681098620830676185, guid: 14097af65cfb5a945ae21f3afb3b8cea,
+        type: 3}
       propertyPath: m_Center.x
       value: -0.14982533
       objectReference: {fileID: 0}
@@ -640,7 +645,7 @@ PrefabInstance:
     - target: {fileID: 3681098620830676218, guid: 14097af65cfb5a945ae21f3afb3b8cea,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.67
+      value: 0.31
       objectReference: {fileID: 0}
     - target: {fileID: 3681098620830676218, guid: 14097af65cfb5a945ae21f3afb3b8cea,
         type: 3}
@@ -1525,7 +1530,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bottomLeftSquareTransform: {fileID: 1073381006}
   squareSize: 1.5
-  PieceSelectorPrefab: {fileID: 0}
 --- !u!114 &1068835983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1541,6 +1545,7 @@ MonoBehaviour:
   viewCam: {fileID: 2119481239}
   WhiteTeamCam: {fileID: 546758238}
   BlackTeamCam: {fileID: 963194227}
+  selection: {fileID: 0}
 --- !u!114 &1068835984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1550,9 +1555,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1068835981}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b06385d8e84e0324c930be849e2f73d7, type: 3}
+  m_Script: {fileID: 11500000, guid: bf12f4213a0fca84f9f12b0456fb0e29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  board: {fileID: 1068835982}
 --- !u!114 &1068835986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2810,6 +2816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materialSetter: {fileID: 0}
+  offset: -2
   avaliableMoves: []
 --- !u!1 &2499132590941686177
 GameObject:
@@ -2990,6 +2997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materialSetter: {fileID: 0}
+  offset: -2
   avaliableMoves: []
 --- !u!4 &3938637071932520620 stripped
 Transform:
@@ -3519,6 +3527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materialSetter: {fileID: 0}
+  offset: -2
   avaliableMoves: []
 --- !u!23 &6247643573486449822
 MeshRenderer:
@@ -3649,6 +3658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materialSetter: {fileID: 0}
+  offset: -2
   avaliableMoves: []
 --- !u!114 &7094148668091091730
 MonoBehaviour:
@@ -3663,6 +3673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materialSetter: {fileID: 0}
+  offset: -2
   avaliableMoves: []
 --- !u!4 &7393329992136404070
 Transform:
@@ -3692,6 +3703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materialSetter: {fileID: 0}
+  offset: -2
   avaliableMoves: []
 --- !u!4 &8068387627922818533
 Transform:

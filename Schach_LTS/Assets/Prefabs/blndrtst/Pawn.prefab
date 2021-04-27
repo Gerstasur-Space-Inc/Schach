@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -1180046473145509328}
   - component: {fileID: 65157610379802989}
   - component: {fileID: -5905602673124296979}
+  - component: {fileID: -4869498115595935790}
   m_Layer: 0
   m_Name: Pawn
   m_TagString: Untagged
@@ -121,4 +122,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materialSetter: {fileID: 0}
+  offset: 2
   avaliableMoves: []
+--- !u!64 &-4869498115595935790
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9014920295138476448}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2711286860549411961, guid: 8a4709a32f10b974db505d7a43014e12, type: 3}

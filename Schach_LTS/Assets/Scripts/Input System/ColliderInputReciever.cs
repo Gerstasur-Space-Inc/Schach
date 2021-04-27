@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class ColliderInputReciever : InputReciever {
     private Vector3 clickPosition;
-
-
-   
+    
     public Camera viewCam;//
     public Camera WhiteTeamCam;
     public Camera BlackTeamCam;
-
+    public Piece selection;
 
 
     void Update()
@@ -21,8 +19,10 @@ public class ColliderInputReciever : InputReciever {
             Ray ray = camRay();
             if (Physics.Raycast(ray, out hit))
             {
-
                 clickPosition = hit.point;
+
+                 selection = hit.transform.gameObject.GetComponent<Piece>();
+
                 OnInputRecieved();
             }
         }
@@ -40,7 +40,7 @@ public class ColliderInputReciever : InputReciever {
 
     public override void OnInputRecieved() {
         foreach (var handler in inputHandlers) {
-            handler.ProcessInput(clickPosition, null, null);
+            handler.ProcessInput(clickPosition, null, null,selection);
         }
     }
 }

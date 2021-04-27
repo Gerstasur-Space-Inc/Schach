@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [RequireComponent(typeof(Board))]
-public class BoardInputHandler : MonoBehaviour, IInputHandler
+public class BoardInputHandlerN : MonoBehaviour, IInputHandler
 {
     private Board board;
 
@@ -13,7 +13,7 @@ public class BoardInputHandler : MonoBehaviour, IInputHandler
         board = GetComponent<Board>();
     }
 
-   
+
 
     public void ProcessInput(Vector3 inputPosition, GameObject selectedObject, Action onClick, Piece selectedPiece)
     {

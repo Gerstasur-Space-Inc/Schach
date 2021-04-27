@@ -4,5 +4,5 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public interface IInputHandler {
-    void ProcessInput(Vector3 inputPosition, GameObject selectedObject, Action onClick);
+    void ProcessInput(Vector3 inputPosition, GameObject selectedObject, Action onClick, Piece selectedPiece);
 }

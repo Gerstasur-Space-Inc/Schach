@@ -3,20 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Board))]
-public class BoardInputHandler : MonoBehaviour, IInputHandler
+public class PieceInputHandler : MonoBehaviour,IInputHandler
 {
-    private Board board;
 
-    private void Awake()
-    {
-        board = GetComponent<Board>();
-    }
-
+    [SerializeField] private Board board;
+   
    
 
     public void ProcessInput(Vector3 inputPosition, GameObject selectedObject, Action onClick, Piece selectedPiece)
     {
+
+        // board.OnPieceSelected(selectedPiece, inputPosition);
         board.OnSquareSelected(inputPosition);
+        
     }
 }
