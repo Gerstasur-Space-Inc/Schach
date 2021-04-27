@@ -9,22 +9,23 @@ public class KameraManager : MonoBehaviour
     [SerializeField] public Camera playCamWhite;
     [SerializeField] public Camera playCamBlack;
     [SerializeField] public Camera viewCam;
+    private bool isviewCam;
 
     [SerializeField] private float Camdelay = 2;
 
     private void Awake()
-    {
-        switchToplayCamWhite();
+    {switchToplayCamWhite();
     }
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         //changeCam();
+
 
         changecam2();
     }
@@ -33,33 +34,67 @@ public class KameraManager : MonoBehaviour
    private void  changecam2()
     {
 
-        if((chessGameController.activePlayer == chessGameController.whitePlayer) && viewCam.enabled == false)
+        if(chessGameController.activePlayer == chessGameController.whitePlayer)
         {
             // switchToplayCamWhite();
             StartCoroutine(SwitchToPlayCamWhiteDelay(Camdelay));
         }
 
-        if(chessGameController.activePlayer == chessGameController.blackPlayer && viewCam.enabled == false)
+        if(chessGameController.activePlayer == chessGameController.blackPlayer)
+        {
+            //switchToplayCamBlack();
+            StartCoroutine(SwitchToPlayCamBlackDelay(Camdelay));
+        }
+    }
+
+
+
+    public IEnumerator SwitchToPlayCamWhiteDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        switchToplayCamWhite();
+    }
+
+    public IEnumerator SwitchToPlayCamBlackDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        switchToplayCamBlack();
+    }
+
+    public IEnumerator SwitchToViewCamDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        switchoViewCam();
+    }
+
+
+    private void changeCam()
+    {
+        if (chessGameController.activePlayer == chessGameController.whitePlayer && !viewCam)
+        {
+            switchToplayCamWhite();
+            isviewCam = false;
+        }
+        else if (chessGameController.activePlayer == chessGameController.blackPlayer && !viewCam)
         {
             switchToplayCamBlack();
+            isviewCam = false;
         }
-
-        if (Input.GetKeyDown(KeyCode.V) && viewCam.enabled == false)
+        else if (Input.GetKeyDown(KeyCode.V) && !isviewCam)
         {
             switchoViewCam();
+            isviewCam = true;
+
         }
-
-        else if (Input.GetKeyDown(KeyCode.V) && viewCam.enabled == true)
+        else if ((Input.GetKeyDown(KeyCode.V) && chessGameController.activePlayer == chessGameController.whitePlayer && isviewCam) || chessGameController.activePlayer == chessGameController.whitePlayer && !viewCam)
         {
-            if (chessGameController.activePlayer == chessGameController.whitePlayer)
-            {
-                switchToplayCamWhite();
-            }
-
-            if (chessGameController.activePlayer == chessGameController.blackPlayer)
-            {
-                switchToplayCamBlack();
-            }
+            switchToplayCamWhite();
+            isviewCam = false;
+        }
+        else if ((Input.GetKeyDown(KeyCode.V) && chessGameController.activePlayer == chessGameController.blackPlayer && isviewCam) || chessGameController.activePlayer == chessGameController.blackPlayer && !viewCam)
+        {
+            switchToplayCamBlack();
+            isviewCam = false;
         }
     }
 
@@ -75,7 +110,7 @@ public class KameraManager : MonoBehaviour
     public void switchoViewCam()
     {
         deactivateAllCams();
-
+       
         viewCam.enabled = true;
     }
     public void switchToplayCamWhite()
