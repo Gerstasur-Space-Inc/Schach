@@ -24,22 +24,12 @@ public class KameraManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //changeCam();
-
-        changecam2();
-    }
-
-
-   private void  changecam2()
-    {
-
-        if((chessGameController.activePlayer == chessGameController.whitePlayer) && viewCam.enabled == false)
+        if (chessGameController.activePlayer == chessGameController.whitePlayer && !viewCam)
         {
-            // switchToplayCamWhite();
-            StartCoroutine(SwitchToPlayCamWhiteDelay(Camdelay));
+            switchToplayCamWhite();
+            isviewCam = false;
         }
-
-        if(chessGameController.activePlayer == chessGameController.blackPlayer && viewCam.enabled == false)
+        else if (chessGameController.activePlayer == chessGameController.blackPlayer && !viewCam)
         {
             switchToplayCamBlack();
         }
@@ -61,6 +51,7 @@ public class KameraManager : MonoBehaviour
                 switchToplayCamBlack();
             }
         }
+
     }
 
 
