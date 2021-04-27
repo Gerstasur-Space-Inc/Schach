@@ -8,6 +8,8 @@ using UnityEngine;
 [RequireComponent(typeof(IObjectTweener))]
 public abstract class Piece : MonoBehaviour {
 	[SerializeField] private MaterialSetter materialSetter;
+
+	[SerializeField] public float offset = 0.004f;
 	public Board board { protected get; set; }
 	public Vector2Int occupiedSquare { get; set; }
 	public TeamColor team { get; set; }
@@ -16,6 +18,8 @@ public abstract class Piece : MonoBehaviour {
 
 	private IObjectTweener tweener;
 
+	
+
 	public abstract List<Vector2Int> SelectAvaliableSquares();
 
 	private void Awake() {
@@ -23,8 +27,10 @@ public abstract class Piece : MonoBehaviour {
 		tweener = GetComponent<IObjectTweener>();
 		materialSetter = GetComponent<MaterialSetter>();
 		hasMoved = false;
-	}
 
+		
+	}
+	
 	public void SetMaterial(Material selectedMaterial) {
 		materialSetter.SetSingleMaterial(selectedMaterial);
 	}

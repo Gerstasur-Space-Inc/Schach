@@ -11,7 +11,7 @@ public class PieceSelectorCreator : MonoBehaviour
     {
         ClearSelection();
 
-        GameObject selector = Instantiate(PieceSelectorPrefab, Data.Key)
+        //GameObject selector = Instantiate(PieceSelectorPrefab, Data.Key)
     }
 
     public void ClearSelection()
