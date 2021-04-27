@@ -47,6 +47,8 @@ public class Board : MonoBehaviour
         return new Vector2Int(x, y);
     }
 
+
+
     public void OnSquareSelected(Vector3 inputPosition)
     {
         Vector2Int coords = CalculateCoordsFromPosition(inputPosition);
@@ -67,8 +69,28 @@ public class Board : MonoBehaviour
         }
     }
 
-
-
+   
+    public void OnPieceSelected(Piece piece)
+    {
+        if (piece == null) { Debug.LogWarning("piece ist null "); }
+           
+        Vector2Int coords=  CalculateCoordsFromPosition(piece.gameObject.transform.position);
+        
+        if (selectedPiece)
+        {
+            if (piece != null && selectedPiece == piece)
+                DeselectPiece();
+            else if (piece != null && selectedPiece != piece && chessController.IsTeamTurnActive(piece.team))
+                SelectPiece(piece);
+            else if (selectedPiece.CanMoveTo(coords))
+                OnSelectedPieceMoved(coords, selectedPiece);
+        }
+        else
+        {
+            if (piece != null && chessController.IsTeamTurnActive(piece.team))
+                SelectPiece(piece);
+        }
+    }
     private void SelectPiece(Piece piece)
     {
         chessController.RemoveMovesEnablingAttakOnPieceOfType<King>(piece);

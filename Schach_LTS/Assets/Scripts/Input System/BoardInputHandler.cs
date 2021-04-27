@@ -4,14 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Board))]
-public class BoardInputHandler : MonoBehaviour, IInputHandler {
+public class BoardInputHandler : MonoBehaviour, IInputHandler
+{
     private Board board;
 
-    private void Awake() {
+    private void Awake()
+    {
         board = GetComponent<Board>();
     }
 
-    public void ProcessInput(Vector3 inputPosition, GameObject selectedObject, Action onClick) {
+   
+
+    public void ProcessInput(Vector3 inputPosition, GameObject selectedObject, Action onClick, Piece selectedPiece)
+    {
         board.OnSquareSelected(inputPosition);
     }
 }
