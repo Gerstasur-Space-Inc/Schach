@@ -12,8 +12,9 @@ public class PieceInputHandler : MonoBehaviour,IInputHandler
 
     public void ProcessInput(Vector3 inputPosition, GameObject selectedObject, Action onClick, Piece selectedPiece)
     {
-        Debug.Log("selected position:" + inputPosition.x +"|" +inputPosition.y );
-        board.OnPieceSelected(selectedPiece, inputPosition);
+
+        // board.OnPieceSelected(selectedPiece, inputPosition);
+        board.OnSquareSelected(inputPosition);
         
     }
 }
