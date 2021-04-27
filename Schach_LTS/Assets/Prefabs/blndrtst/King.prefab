@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -7073594632663401540}
   - component: {fileID: -3827821698618076626}
   - component: {fileID: 6526895333099844606}
+  - component: {fileID: 2708828770507557389}
   m_Layer: 0
   m_Name: King
   m_TagString: Untagged
@@ -121,4 +122,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materialSetter: {fileID: 0}
+  offset: 2
   avaliableMoves: []
+--- !u!64 &2708828770507557389
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2499132590250829411}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7015828898369680716, guid: 8a4709a32f10b974db505d7a43014e12, type: 3}
