@@ -2,6 +2,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(SquareSelectorCreator))]
+[RequireComponent(typeof(PieceSelectorCreator))]
 public class Board : MonoBehaviour
 {
     public const int BOARD_SIZE = 8;
@@ -14,12 +15,15 @@ public class Board : MonoBehaviour
     private ChessGameController chessController;
     private SquareSelectorCreator squareSelector;
 
+    private PieceSelectorCreator pieceSelectorCreator;
+
 
 
 
     private void Awake()
     {
         squareSelector = GetComponent<SquareSelectorCreator>();
+        pieceSelectorCreator = GetComponent<PieceSelectorCreator>();
         CreateGrid();
     }
 
@@ -102,6 +106,9 @@ public class Board : MonoBehaviour
         List<Vector2Int> selection = selectedPiece.avaliableMoves;
         ShowSelectionSquares(selection);
 
+
+        pieceSelectorCreator.ShowSelectedPiece(piece.transform.position);
+
     }
 
     private void ShowSelectionSquares(List<Vector2Int> selection)
@@ -123,6 +130,9 @@ public class Board : MonoBehaviour
     }
     private void OnSelectedPieceMoved(Vector2Int coords, Piece piece)
     {
+
+        pieceSelectorCreator.ClearSelection();
+
         TryToTakeOppositePiece(coords);
         UpdateBoardOnPieceMove(coords, piece.occupiedSquare, piece, null);
         selectedPiece.MovePiece(coords);

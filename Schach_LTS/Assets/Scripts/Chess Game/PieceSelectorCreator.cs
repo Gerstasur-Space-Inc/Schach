@@ -5,20 +5,17 @@ using UnityEngine;
 public class PieceSelectorCreator : MonoBehaviour
 {
     [SerializeField] GameObject PieceSelectorPrefab;
-    private List<GameObject> instantiatedSelectors = new List<GameObject>();
+    private GameObject instantiadtedGameObject;
 
-    public void ShowSelectedPiece(Vector3 pos, bool squareData)
+    public void ShowSelectedPiece(Vector3 pos)
     {
         ClearSelection();
 
-        //GameObject selector = Instantiate(PieceSelectorPrefab, Data.Key)
+        instantiadtedGameObject = Instantiate(PieceSelectorPrefab, pos, Quaternion.identity);
     }
 
     public void ClearSelection()
     {
-        for (int i = 0; i < instantiatedSelectors.Count; i++)
-        {
-            Destroy(instantiatedSelectors[i]);
-        }
+        Destroy(instantiadtedGameObject);
     }
 }
