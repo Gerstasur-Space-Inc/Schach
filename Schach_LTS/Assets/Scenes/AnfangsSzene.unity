@@ -2322,6 +2322,7 @@ Transform:
   m_Father: {fileID: 1950320571}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1842171909 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7541d313b57746840a3f9b76f5e284d3,
@@ -2377,6 +2378,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> bessere-Texturenn
 --- !u!1 &2119481236
 GameObject:
   m_ObjectHideFlags: 0
