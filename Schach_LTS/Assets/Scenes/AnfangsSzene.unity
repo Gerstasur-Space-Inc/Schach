@@ -2145,7 +2145,8 @@ MonoBehaviour:
   playCamWhite: {fileID: 546758238}
   playCamBlack: {fileID: 963194227}
   viewCam: {fileID: 2119481239}
-  Camdelay: 0.3
+  isviewCam: 0
+  Camdelay: 0.4
 --- !u!1 &1644527803
 GameObject:
   m_ObjectHideFlags: 0
@@ -2705,6 +2706,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eff3e45a82ab99941adbfd9692cfb1c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoomspeed: 300
+  kameraManager: {fileID: 1596282834}
 --- !u!114 &2119481241
 MonoBehaviour:
   m_ObjectHideFlags: 0

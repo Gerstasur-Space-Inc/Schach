@@ -5,7 +5,8 @@ using UnityEngine;
 public class KameraZoom : MonoBehaviour
 {
     private float zoom;
-    private float zoomspeed = 300;
+    [SerializeField] private float zoomspeed;
+    [SerializeField] private KameraManager kameraManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +17,19 @@ public class KameraZoom : MonoBehaviour
     void Update()
     {
         zoom = Input.mouseScrollDelta.y;
-        zoomCam();
+
+        if (kameraManager.isviewCam == true)
+        {
+           zoomCam();
+        }
+        else
+        {
+            
+        }
+        
     }
     void zoomCam() 
     {
-
         transform.Translate(Vector3.forward * Time.deltaTime * zoom * zoomspeed);
     }
 }

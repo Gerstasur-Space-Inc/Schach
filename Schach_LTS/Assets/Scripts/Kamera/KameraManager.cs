@@ -9,7 +9,7 @@ public class KameraManager : MonoBehaviour
     [SerializeField] public Camera playCamWhite;
     [SerializeField] public Camera playCamBlack;
     [SerializeField] public Camera viewCam;
-    private bool isviewCam = false;
+    public bool isviewCam = false;
 
     [SerializeField] private float Camdelay = 2;
 
