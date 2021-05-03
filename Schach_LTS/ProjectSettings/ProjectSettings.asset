@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: Gerstasur Space
   productName: Chess Version 2
-  defaultCursor: {fileID: 2800000, guid: 1e21a8900235f8e4ca257e252ba32f88, type: 3}
+  defaultCursor: {fileID: 2800000, guid: ea5a7833033d0a94c80b8fc6ab05ca1f, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
