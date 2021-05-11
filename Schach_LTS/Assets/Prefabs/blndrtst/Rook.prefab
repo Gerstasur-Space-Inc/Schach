@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6314247536266840830}
   - component: {fileID: -3550384460282174497}
   - component: {fileID: 6035272541855334818}
-  - component: {fileID: 5797137224084642587}
+  - component: {fileID: 7328088000790097652}
   m_Layer: 0
   m_Name: Rook
   m_TagString: Untagged
@@ -95,7 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e02c8fe5e4419804da42f96b333834c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 7
 --- !u!114 &-3550384460282174497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,8 +123,8 @@ MonoBehaviour:
   materialSetter: {fileID: 0}
   offset: 2
   avaliableMoves: []
---- !u!64 &5797137224084642587
-MeshCollider:
+--- !u!65 &7328088000790097652
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -134,7 +133,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2071130321619098986, guid: 8a4709a32f10b974db505d7a43014e12, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0002019302, y: 0.00020193022, z: 0.0002781406}
+  m_Center: {x: -2.5465855e-11, y: -3.6379797e-12, z: 0.00013907033}

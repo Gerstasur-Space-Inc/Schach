@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -5232418102265996444}
   - component: {fileID: -557394777637437908}
   - component: {fileID: 2144402098332583462}
-  - component: {fileID: 7548300641631081685}
+  - component: {fileID: -8752734012997622006}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Untagged
@@ -125,8 +125,8 @@ MonoBehaviour:
   materialSetter: {fileID: 0}
   offset: 2
   avaliableMoves: []
---- !u!64 &7548300641631081685
-MeshCollider:
+--- !u!65 &-8752734012997622006
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -135,7 +135,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4095567931331086642, guid: f0082751ec2e95f42ae131cb462ec18f, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0093263965, y: 0.0093263965, z: 0.018712213}
+  m_Center: {x: -9.313226e-10, y: -0.0000000020954758, z: 0.009356099}

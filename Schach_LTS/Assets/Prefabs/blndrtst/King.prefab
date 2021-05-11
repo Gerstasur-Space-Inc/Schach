@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -7073594632663401540}
   - component: {fileID: -3827821698618076626}
   - component: {fileID: 6526895333099844606}
-  - component: {fileID: 2708828770507557389}
+  - component: {fileID: 3088824130754038319}
   m_Layer: 0
   m_Name: King
   m_TagString: Untagged
@@ -95,7 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e02c8fe5e4419804da42f96b333834c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 7
 --- !u!114 &-3827821698618076626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,8 +123,8 @@ MonoBehaviour:
   materialSetter: {fileID: 0}
   offset: 2
   avaliableMoves: []
---- !u!64 &2708828770507557389
-MeshCollider:
+--- !u!65 &3088824130754038319
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -134,7 +133,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7015828898369680716, guid: 8a4709a32f10b974db505d7a43014e12, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.00020857135, y: 0.00020857132, z: 0.00054967066}
+  m_Center: {x: 3.637979e-12, y: -1.0913935e-11, z: 0.00027483545}

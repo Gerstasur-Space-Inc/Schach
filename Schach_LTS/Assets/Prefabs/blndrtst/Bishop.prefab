@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 939241480465243339}
   - component: {fileID: 8216196877358228717}
   - component: {fileID: -2807703263246711404}
-  - component: {fileID: -7329919887144126723}
+  - component: {fileID: 6164179201127992232}
   m_Layer: 0
   m_Name: Bishop
   m_TagString: Untagged
@@ -108,7 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e02c8fe5e4419804da42f96b333834c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 7
 --- !u!114 &-2807703263246711404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,8 +123,8 @@ MonoBehaviour:
   materialSetter: {fileID: 0}
   offset: 2
   avaliableMoves: []
---- !u!64 &-7329919887144126723
-MeshCollider:
+--- !u!65 &6164179201127992232
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -134,7 +133,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8278091930933430605, guid: 8a4709a32f10b974db505d7a43014e12, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0036497593, y: 0.0036497593, z: 0.010055058}
+  m_Center: {x: -0.0000070571546, y: -0.0000021419276, z: 0.005027529}
