@@ -1,7 +1,7 @@
-#define MyAppName "Chess Version 2"
-#define MyAppVersion "1"
-#define MyAppPublisher "Gerstasur Space"
-#define MyAppURL ""
+#define MyAppName "Amazing Game"
+#define MyAppVersion "0.1"
+#define MyAppPublisher "Default Company"
+#define MyAppURL "Awsome Website"
 #define MyAppExeName "build2.exe"
 
 [Setup]
@@ -14,8 +14,11 @@ AppSupportURL ={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
+PrivilegesRequired=lowest
+PrivilegesRequiredOverridesAllowed=dialog
+
 OutputDir=C:\Users\Was ist einzugeben\Documents\GitHub\Schach\Schach_LTS\Installer\one
-OutputBaseFilename=chess
+OutputBaseFilename=setup
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern

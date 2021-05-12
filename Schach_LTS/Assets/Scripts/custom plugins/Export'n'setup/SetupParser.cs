@@ -9,11 +9,12 @@ namespace ExportnSetup
 {
     public class SetupParser
     {
+        
         public static string currentDir = System.IO.Directory.GetCurrentDirectory() + "\\";
 
         private string result { get; set; }
 
-
+        
         public void addData(string appName, string AppVersion, string Publisher,
             string AppURL, string EXEName, string outputDir, string OutputFilename, string[] files, string[] dirs)
         {
@@ -22,7 +23,7 @@ namespace ExportnSetup
             #region result
             result =
                 "#define MyAppName \"" + appName + "\"\n" +
-                "#define MyAppVersion \"" + AppVersion + "\"\n" +
+                "#define MyAppVersion \"" + EditorInfosGatherer.appversion + "\"\n" +
                 "#define MyAppPublisher \"" + Publisher + "\"\n" +
                 "#define MyAppURL \"" + AppURL + "\"\n" +
                 "#define MyAppExeName \"build2.exe\"\n" +
@@ -37,6 +38,9 @@ namespace ExportnSetup
                 "AppUpdatesURL={#MyAppURL}\n" +
                 "DefaultDirName={autopf}\\{#MyAppName}\n" +
                 "DisableProgramGroupPage=yes\n" +
+                installmode() + "\n"+
+                installchoose()+"\n"+
+                usercanchangefolder()+"\n"+
                 "OutputDir=" + outputDir + "\n" +
                 "OutputBaseFilename=" + OutputFilename + "\n" +
                 "Compression=lzma\n" +
@@ -63,7 +67,18 @@ namespace ExportnSetup
             System.IO.File.WriteAllText(currentDir + "Assets\\Scripts\\custom plugins\\Export'n'setup\\resources\\innosetup\\Inno Setup 6\\script.iss", result);
 
         }
-
+        private string installmode()
+        {
+            return !EditorInfosGatherer.adminisDefaultinstallmode ? "" : "PrivilegesRequired=lowest";
+        }
+        private string installchoose()
+        {
+            return EditorInfosGatherer.AllowUserToChangeTheAppFolder ? "PrivilegesRequiredOverridesAllowed=dialog" : "";
+        }
+        private string usercanchangefolder()
+        {
+            return EditorInfosGatherer.AllowUserToChangeTheAppFolder ? "" : "DisableDirPage=yes";
+        }
         private string generateFilesString(string[] files, string[] dirs)
         {
 

@@ -195,6 +195,7 @@ public class Board : MonoBehaviour
 
     private void TakePiece(Piece piece)
     {
+
         if (piece)
         {
             grid[piece.occupiedSquare.x, piece.occupiedSquare.y] = null;
