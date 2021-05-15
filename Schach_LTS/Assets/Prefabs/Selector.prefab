@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 782282824487536971}
   - component: {fileID: 5853845276342836601}
   - component: {fileID: 6475003835036380559}
-  - component: {fileID: 616264442917672482}
   m_Layer: 0
   m_Name: Right Border (3)
   m_TagString: Untagged
@@ -114,19 +113,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &616264442917672482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2065119134172842790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22699b785a28cba46837911c1d5100d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _meshRenderer: {fileID: 6475003835036380559}
 --- !u!1 &3064280373419113137
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +124,6 @@ GameObject:
   - component: {fileID: 5265651616653492583}
   - component: {fileID: 4006459898182149948}
   - component: {fileID: 1076320859953870941}
-  - component: {fileID: 4876987072804938526}
   m_Layer: 0
   m_Name: Right Border (1)
   m_TagString: Untagged
@@ -207,19 +192,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &4876987072804938526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3064280373419113137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22699b785a28cba46837911c1d5100d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _meshRenderer: {fileID: 1076320859953870941}
 --- !u!1 &3328545202432967203
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +203,6 @@ GameObject:
   - component: {fileID: 2514020749868164347}
   - component: {fileID: 9024713853758858481}
   - component: {fileID: 7119689731964237064}
-  - component: {fileID: 3994499136506615464}
   m_Layer: 0
   m_Name: Right Border
   m_TagString: Untagged
@@ -300,19 +271,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &3994499136506615464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3328545202432967203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22699b785a28cba46837911c1d5100d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _meshRenderer: {fileID: 7119689731964237064}
 --- !u!1 &5340945476783373329
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,7 +282,6 @@ GameObject:
   - component: {fileID: 3062962125543951103}
   - component: {fileID: 1291175074632486075}
   - component: {fileID: 1618356229537823849}
-  - component: {fileID: 1835855732052536979}
   m_Layer: 0
   m_Name: Right Border (2)
   m_TagString: Untagged
@@ -393,16 +350,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &1835855732052536979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5340945476783373329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22699b785a28cba46837911c1d5100d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _meshRenderer: {fileID: 1618356229537823849}

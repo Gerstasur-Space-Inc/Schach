@@ -92,11 +92,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1231958032995893606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3528dfabbbd49254183e867225189340, type: 3}
+  m_Script: {fileID: 11500000, guid: be8208d61c5aa584a83c4f072b1f8d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 7
-  jumpHeight: 1
+  materialSetter: {fileID: 0}
+  avaliableMoves: []
 --- !u!114 &-557394777637437908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1231958032995893606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22699b785a28cba46837911c1d5100d4, type: 3}
+  m_Script: {fileID: 11500000, guid: 916d92a986f924d4b9d6f5b03488a00e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _meshRenderer: {fileID: 0}
@@ -119,12 +119,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1231958032995893606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6c171cb1b2bbdf41a4f1dddd0b4bcc8, type: 3}
+  m_Script: {fileID: 11500000, guid: 329ff9f9f22483044870853de6f52e7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialSetter: {fileID: 0}
-  offset: 2
-  avaliableMoves: []
+  movementSpeed: 5
+  jumpHeight: 1.5
 --- !u!65 &-8752734012997622006
 BoxCollider:
   m_ObjectHideFlags: 0
