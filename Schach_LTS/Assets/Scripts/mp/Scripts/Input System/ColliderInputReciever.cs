@@ -15,7 +15,7 @@ public class ColliderInputReciever : InputReciever
             {
                 clickPosition = hit.point;
                 OnInputRecieved();
-            }
+            } 
         }
     }
 
