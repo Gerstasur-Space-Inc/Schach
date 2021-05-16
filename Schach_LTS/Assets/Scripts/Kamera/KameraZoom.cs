@@ -6,7 +6,7 @@ public class KameraZoom : MonoBehaviour
 {
     private float zoom;
     [SerializeField] private float zoomspeed;
-    [SerializeField] private KameraManager kameraManager;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +18,7 @@ public class KameraZoom : MonoBehaviour
     {
         zoom = Input.mouseScrollDelta.y;
 
-        if (kameraManager.isviewCam == true)
+        if (CameraSetup.isviewCam)
         {
            zoomCam();
         }

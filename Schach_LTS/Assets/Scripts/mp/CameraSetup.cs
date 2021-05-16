@@ -7,7 +7,7 @@ public class CameraSetup : MonoBehaviour
 {
     [SerializeField] Camera mainCamera;
     [SerializeField] private Camera viewCam;
-    bool isviewCam = false;
+   public static bool isviewCam = false;
 
     public void SetupCamera(TeamColor team)
     {
