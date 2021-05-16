@@ -7,11 +7,12 @@ public class CameraSetup : MonoBehaviour
 {
     [SerializeField] Camera mainCamera;
     [SerializeField] private Camera viewCam;
-   public static bool isviewCam = false;
+    public static bool isviewCam = false;
 
     public void SetupCamera(TeamColor team)
     {
-        if(team == TeamColor.Black)
+
+        if (team == TeamColor.Black)
         {
             FlipCamera();
         }
@@ -19,8 +20,12 @@ public class CameraSetup : MonoBehaviour
 
     public void FlipCamera()
     {
-        mainCamera.transform.position = new Vector3(mainCamera.transform.position.x, mainCamera.transform.position.y, -mainCamera.transform.position.z);
-        mainCamera.transform.Rotate(Vector3.up, 180f, Space.World);
+        if (ChessUIManager.gamemode == 1)
+        {
+            mainCamera.transform.position = new Vector3(mainCamera.transform.position.x, mainCamera.transform.position.y, -mainCamera.transform.position.z);
+            mainCamera.transform.Rotate(Vector3.up, 180f, Space.World);
+        }
+
     }
     public void FlipCamerawithDelay()
     {

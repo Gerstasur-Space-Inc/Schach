@@ -27,6 +27,8 @@ public class ChessUIManager : MonoBehaviour
 	[Header("Other UI")]
 	[SerializeField] private Dropdown gameLevelSelection;
 
+	public static int gamemode = 0;
+
 	private void Awake()
 	{
 		gameLevelSelection.AddOptions(Enum.GetNames(typeof(ChessLevel)).ToList());
@@ -49,6 +51,7 @@ public class ChessUIManager : MonoBehaviour
 		TeamSelectionScreen.SetActive(false);
 		ConnectScreen.SetActive(false);
 		GameModeSelectionScreen.SetActive(false);
+		gamemode = 1;
 	}
 
 	public void OnMultiPlayerModeSelected()
@@ -58,6 +61,7 @@ public class ChessUIManager : MonoBehaviour
 		TeamSelectionScreen.SetActive(false);
 		ConnectScreen.SetActive(true);
 		GameModeSelectionScreen.SetActive(false);
+		gamemode = 2;
 	}
 
 	internal void OnGameFinished(string winner)
@@ -67,6 +71,7 @@ public class ChessUIManager : MonoBehaviour
 		TeamSelectionScreen.SetActive(false);
 		ConnectScreen.SetActive(false);
 		finishText.text = string.Format("{0} won", winner);
+		
 	}
 
 	public void OnConnect()
