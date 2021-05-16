@@ -81,7 +81,29 @@ public abstract class Board : MonoBehaviour
                 SelectPiece(coords);
         }
     }
+    public void OnPieceSelected(Piece piece, Vector3 inputPos)
+    {
+        if (piece == null) { Debug.LogWarning("piece ist null "); }
 
+        //Vector2Int coords = CalculateCoordsFromPosition(piece.gameObject.transform.position);
+        Vector2Int coords = CalculateCoordsFromPosition(inputPos);
+
+        if (selectedPiece)
+        {
+            if (piece != null && selectedPiece == piece)
+                DeselectPiece();
+            else if (piece != null && selectedPiece != piece && chessController.IsTeamTurnActive(piece.team))
+                SelectPiece(coords);
+            else if (selectedPiece.CanMoveTo(coords))
+                SelectedPieceMoved(coords);
+            
+        }
+        else
+        {
+            if (piece != null && chessController.IsTeamTurnActive(piece.team))
+                SelectPiece(coords);
+        }
+    }
     public abstract void SelectedPieceMoved(Vector2 coords);
     public abstract void SetSelectedPiece(Vector2 coords);
 
