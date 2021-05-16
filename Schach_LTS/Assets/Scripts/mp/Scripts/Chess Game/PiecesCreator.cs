@@ -25,7 +25,9 @@ public class PiecesCreator : MonoBehaviour
         if (prefab)
         {
             GameObject newPiece = Instantiate(prefab);
-            return newPiece;
+            
+                
+                    return newPiece;
         }
         return null;
     }
