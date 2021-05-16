@@ -11,6 +11,18 @@ public class Bishop : Piece
         new Vector2Int(-1, 1),
         new Vector2Int(-1,- 1),
     };
+
+    private void Start()
+    {
+        if (team == TeamColor.Black)
+        {
+            transform.Rotate(0, 0, 90);
+        }
+        else
+        {
+            transform.Rotate(0, 0, -90);
+        }
+    }
     public override List<Vector2Int> SelectAvaliableSquares()
     {
         avaliableMoves.Clear();
