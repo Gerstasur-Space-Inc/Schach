@@ -175,7 +175,9 @@ public abstract class ChessGameController : MonoBehaviour
 
     private void ChangeActiveTeam()
     {
+        cameraSetup.FlipCamera();
         activePlayer = activePlayer == whitePlayer ? blackPlayer : whitePlayer;
+
     }
 
     private ChessPlayer GetOpponentToPlayer(ChessPlayer player)
