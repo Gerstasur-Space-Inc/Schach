@@ -9,6 +9,7 @@ public class ChessUIManager : MonoBehaviour
 {
 	[Header("Dependencies")]
 	[SerializeField] private NetworkManager networkManager;
+	[SerializeField] private CameraSetup camsetup;
 
 	[Header("Buttons")]
 	[SerializeField] private Button whiteTeamButtonButton;
@@ -62,6 +63,7 @@ public class ChessUIManager : MonoBehaviour
 		ConnectScreen.SetActive(true);
 		GameModeSelectionScreen.SetActive(false);
 		gamemode = 2;
+		
 	}
 
 	internal void OnGameFinished(string winner)
@@ -103,7 +105,8 @@ public class ChessUIManager : MonoBehaviour
 
 	public void SelectTeam(int team)
 	{
-		networkManager.SetPlayerTeam(team);		
+		networkManager.SetPlayerTeam(team);
+		camsetup.SetupCamera((TeamColor)team);
 	}
 
 	internal void RestrictTeamChoice(TeamColor occpiedTeam)
