@@ -11,7 +11,7 @@ public abstract class Board : MonoBehaviour
     [SerializeField] private Transform bottomLeftSquareTransform;
     [SerializeField] private float squareSize;
 
-	private Piece[,] grid;
+    private Piece[,] grid;
     private Piece selectedPiece;
     private ChessGameController chessController;
     private SquareSelectorCreator squareSelector;
@@ -63,7 +63,7 @@ public abstract class Board : MonoBehaviour
     {
         if (!chessController.CanPerformMove())
             return;
-        
+
         Vector2Int coords = CalculateCoordsFromPosition(inputPosition);
         Piece piece = GetPieceOnSquare(coords);
         if (selectedPiece)
@@ -96,7 +96,7 @@ public abstract class Board : MonoBehaviour
                 SelectPiece(coords);
             else if (selectedPiece.CanMoveTo(coords))
                 SelectedPieceMoved(coords);
-            
+
         }
         else
         {
@@ -113,11 +113,11 @@ public abstract class Board : MonoBehaviour
     {
         Piece piece = GetPieceOnSquare(coords);
         chessController.RemoveMovesEnablingAttakOnPieceOfType<King>(piece);
-        SetSelectedPiece(coords);    
+        SetSelectedPiece(coords);
         List<Vector2Int> selection = selectedPiece.avaliableMoves;
         ShowSelectionSquares(selection);
     }
-   
+
 
     private void ShowSelectionSquares(List<Vector2Int> selection)
     {
@@ -137,7 +137,7 @@ public abstract class Board : MonoBehaviour
         squareSelector.ClearSelection();
     }
 
-   
+
 
     private void EndTurn()
     {
@@ -216,6 +216,6 @@ public abstract class Board : MonoBehaviour
         CreateGrid();
     }
 
- 
+
 
 }

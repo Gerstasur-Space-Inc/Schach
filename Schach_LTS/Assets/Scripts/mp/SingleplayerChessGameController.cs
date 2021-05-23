@@ -14,6 +14,14 @@ public class SingleplayerChessGameController : ChessGameController
 		SetGameState(GameState.Play);
 
 	}
+	protected override void ChangeActiveTeam()
+	{
+
+		activePlayer = activePlayer == whitePlayer ? blackPlayer : whitePlayer;
+		cameraSetup.FlipCamera();
+
+	}
+
 	public override bool CanPerformMove()
 	{
 		if (!IsGameInProgress())

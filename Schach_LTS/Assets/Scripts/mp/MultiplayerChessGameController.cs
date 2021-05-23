@@ -64,7 +64,12 @@ public class MultiplayerChessGameController : ChessGameController, IOnEventCallb
 
 	}
 
+	protected override void ChangeActiveTeam()
+	{
 
+		activePlayer = activePlayer == whitePlayer ? blackPlayer : whitePlayer;
+
+	}
 	public override bool CanPerformMove()
 	{
 		if (!IsGameInProgress() || !IsLocalPlayersTurn())
@@ -72,5 +77,5 @@ public class MultiplayerChessGameController : ChessGameController, IOnEventCallb
 		return true;
 	}
 }
-
+//cameraSetup.FlipCamera();
 

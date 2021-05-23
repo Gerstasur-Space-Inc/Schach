@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3547581839862889722}
   - component: {fileID: 358264611250374476}
   - component: {fileID: -3112925158731130006}
-  - component: {fileID: 5786837091631910498}
+  - component: {fileID: 6140250668205354844}
   m_Layer: 0
   m_Name: Queen
   m_TagString: Untagged
@@ -123,8 +123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
---- !u!65 &5786837091631910498
-BoxCollider:
+--- !u!64 &6140250668205354844
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -133,6 +133,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.019871902, y: 0.019871902, z: 0.67786366}
-  m_Center: {x: 6.753111e-10, y: 6.529754e-10, z: 0.338932}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8897410960770572786, guid: 8a4709a32f10b974db505d7a43014e12, type: 3}

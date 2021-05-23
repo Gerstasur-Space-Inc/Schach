@@ -7,25 +7,28 @@ public class CameraSetup : MonoBehaviour
 {
     [SerializeField] Camera mainCamera;
     [SerializeField] private Camera viewCam;
+    [SerializeField] private GameObject KameraHolder;
     public static bool isviewCam = false;
 
     public void SetupCamera(TeamColor team)
     {
 
-        if (team == TeamColor.Black)
+        if (team == TeamColor.White)
         {
             FlipCamera();
+            Debug.LogWarning("cameraflipped");
         }
     }
 
     public void FlipCamera()
     {
-        if (ChessUIManager.gamemode == 1)
+        if (ChessUIManager.gamemode == 1)//brakes the game
         {
             mainCamera.transform.position = new Vector3(mainCamera.transform.position.x, mainCamera.transform.position.y, -mainCamera.transform.position.z);
             mainCamera.transform.Rotate(Vector3.up, 180f, Space.World);
         }
-
+        mainCamera.transform.position = new Vector3(mainCamera.transform.position.x, mainCamera.transform.position.y, -mainCamera.transform.position.z);
+        mainCamera.transform.Rotate(Vector3.up, 180f, Space.World);
     }
     public void FlipCamerawithDelay()
     {
@@ -53,12 +56,25 @@ public class CameraSetup : MonoBehaviour
 
     public void switchToViewCam()
     {
-        viewCam.enabled = true;
-        Camera.main.enabled = false;
+        activateViewCam();
+        viewCam.gameObject.SetActive(true);
+        mainCamera.gameObject.SetActive(false);
     }
     public void switchToPlayCam()
     {
-        viewCam.enabled = false;
-        Camera.main.enabled = true;
+        deactivateViewCam();
+        viewCam.gameObject.SetActive(false);
+
+        mainCamera.gameObject.SetActive(true);
+    }
+
+
+    public void activateViewCam()
+    {
+        KameraHolder.SetActive(true);
+    }
+    public void deactivateViewCam()
+    {
+        KameraHolder.SetActive(false);
     }
 }

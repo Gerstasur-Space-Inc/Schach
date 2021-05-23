@@ -3637,6 +3637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1634114531}
   viewCam: {fileID: 2125720202}
+  KameraHolder: {fileID: 1381446521}
 --- !u!114 &1634114529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3903,6 +3904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   networkManager: {fileID: 1561500247}
+  camsetup: {fileID: 1634114528}
   whiteTeamButtonButton: {fileID: 1317731358}
   blackTeamButtonButton: {fileID: 379425826}
   finishText: {fileID: 544310727}
@@ -5256,7 +5258,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoomspeed: 300
-  kameraManager: {fileID: 1596282834}
 --- !u!114 &2119481241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5542,7 +5543,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoomspeed: 300
-  kameraManager: {fileID: 0}
 --- !u!81 &2125720201
 AudioListener:
   m_ObjectHideFlags: 0

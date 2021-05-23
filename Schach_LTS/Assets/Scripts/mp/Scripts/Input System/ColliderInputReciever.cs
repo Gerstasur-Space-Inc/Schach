@@ -17,7 +17,7 @@ public class ColliderInputReciever : InputReciever
             {
                 clickPosition = hit.point;
                 OnInputRecieved();
-            } 
+            }
         }
     }
     public Ray camRay()
@@ -28,7 +28,7 @@ public class ColliderInputReciever : InputReciever
             return mainCam.ScreenPointToRay(Input.mousePosition);
         return viewCam.ScreenPointToRay(Input.mousePosition);
     }
-    
+
     public override void OnInputRecieved()
     {
         foreach (var handler in inputHandlers)
