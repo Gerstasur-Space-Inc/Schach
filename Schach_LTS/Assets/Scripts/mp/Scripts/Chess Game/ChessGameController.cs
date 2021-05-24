@@ -60,7 +60,7 @@ public abstract class ChessGameController : MonoBehaviour
         TryToStartThisGame();
 
     }
-
+    
     protected abstract void SetGameState(GameState state);
     public abstract void TryToStartThisGame();
     public abstract bool CanPerformMove();
